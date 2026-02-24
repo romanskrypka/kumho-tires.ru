@@ -9,7 +9,7 @@
 
 /* Manrope (заголовки) — variable font */
 @font-face {
-  font-family: 'Manrope';
+  font-family: Manrope;
   src: url('../../fonts/manrope/ManropeVariable.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;

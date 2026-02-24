@@ -1,11 +1,8 @@
 {% set name = item.item.name | default(item.item.code | default('')) %}
-{% set href = item.slug is defined ? '/' ~ item.slug ~ '/' : null %}
+{# Временно без перехода на страницу модели #}
+{% set href = null %}
 
-{% if href %}
-<a href="{{ url(href) }}" class="card-tire link">
-{% else %}
 <div class="card-tire">
-{% endif %}
   <div class="card__item title-wrap">
     <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
   </div>
@@ -14,8 +11,7 @@
       <span class="card__desc">{{ item.item.series }}</span>
     </div>
   {% endif %}
-{% if href %}
-</a>
-{% else %}
+  <div class="card-tire__img-wrap">
+    <img src="{{ url('data/img/tires/hs51/Kumho_ECSTA HS51.png') }}" alt="" class="card-tire__img img-responsive" loading="lazy">
+  </div>
 </div>
-{% endif %}

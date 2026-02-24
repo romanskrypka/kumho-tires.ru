@@ -1,5 +1,6 @@
 /* Верх intro вплотную к краю экрана: оттягиваем на высоту шапки + её top */
 .intro {
+  position: relative;
   margin-top: calc(-0.5rem - 5.2rem);
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -10,6 +11,23 @@
   }
 }
 
+.intro::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  border-radius: 2.5rem 2.5rem 0 0;
+  background-color: #fff;
+  z-index: 950;
+
+  @media (--md) {
+    height: 6rem;
+    border-radius: 10rem 10rem 0 0;
+  }
+}
+
 .intro .swiper-container {
   width: 100%;
   height: 68.4rem;
@@ -17,7 +35,7 @@
   color: var(--color-1);
 
   @media (--lg) {
-    height: 83rem;
+    height: 85rem;
   }
 }
 
@@ -64,7 +82,7 @@
   object-position: center;
 }
 
-.intro .section__item.heading-wrap {
+.intro .intro__heading-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -72,25 +90,11 @@
   height: 100%;
   z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
   pointer-events: none;
 }
 
-.intro .section__item.heading-wrap .container {
-  text-align: center;
+.intro .intro__heading-container .section__item.heading-wrap {
   pointer-events: auto;
-}
-
-.intro .section__item.heading-wrap .heading {
-  font-family: var(--font-2);
-  font-size: 1.2em;
-  line-height: 1.25;
-  color: var(--color-1);
-
-  @media (--lg) {
-    font-size: 2.1em;
-  }
 }
 
 .intro .swiper-pagination {

@@ -119,6 +119,7 @@
 
 .button-lg .button__icon {
     width: 1.6rem;
+    height: 1.6rem;
 }
 
 .button-circle {
@@ -162,6 +163,19 @@
 .button.bg-color-2:hover {
     background: var(--color-6);
     color: var(--color-2);
+}
+
+/* Кнопка акцентная (как в trazano: button-3) */
+.button.button-3 {
+    background: var(--color-3);
+    color: var(--color-1);
+    border-color: var(--color-3);
+}
+
+.button.button-3:hover {
+    background: var(--color-6);
+    color: var(--color-1);
+    border-color: var(--color-6);
 }
 
 .button.bg-color-3:hover {

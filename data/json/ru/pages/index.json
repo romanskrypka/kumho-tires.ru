@@ -20,7 +20,7 @@
         },
         "heading": {
           "tag": "h1",
-          "class": "heading font-2 weight-500 text-center uppercase",
+          "class": "h1 heading font-2 weight-700 heading-flex text-center uppercase",
           "title": "Шины Kumho — южнокорейский бренд с 60-летней историей.<br>Надёжность, проверенная временем."
         }
       }
@@ -55,7 +55,7 @@
       "data": {
         "heading": {
           "tag": "h2",
-          "class": "h2 heading font-2 weight-500 uppercase",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
           "title": "Действующие акции"
         },
         "items": [
@@ -76,8 +76,8 @@
       "data": {
         "heading": {
           "tag": "h2",
-          "class": "title font-2 weight-500",
-          "title": "Модели шин"
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Модельный ряд Kumho"
         }
       }
     },

@@ -50,6 +50,10 @@
   background: var(--color-7);
 }
 
+.bg-color-8 {
+  background: var(--color-8);
+}
+
 .opacity-08 {
   opacity: 0.08;
 }
@@ -200,6 +204,27 @@
 
 .text-right {
   text-align: right;
+}
+
+/* Выравнивание flex — вешать в разметке, не в CSS секций/компонентов */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .uppercase {

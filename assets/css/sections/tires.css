@@ -1,5 +1,28 @@
-.tires .cards-tire-wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 1.5rem;
+.tires .section__item.block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    gap: 4rem;
+  }
+}
+
+.tires .section__subitem.cards-tire-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (--lg) {
+    gap: 2rem;
+  }
+}
+
+.tires .section__inner.card-tire-wrap {
+  width: 100%;
+  min-width: 0;
+
+  @media (--lg) {
+    flex: 0 0 calc((100% - 2rem * 3) / 4);
+  }
 }

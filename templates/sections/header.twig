@@ -7,9 +7,11 @@
     </div>
     <nav class="section__subitem nav-wrap" aria-label="Основное меню">
       {% for item in global.nav[lang_code].items %}
+        {% if item.visible is not defined or item.visible %}
         <div class="section__inner nav-link-wrap">
           <a href="{{ url(item.href) }}" class="link color-2">{{ item.title }}</a>
         </div>
+        {% endif %}
       {% endfor %}
     </nav>
     <div class="section__subitem burger-icon-wrap">

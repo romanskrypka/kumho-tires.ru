@@ -2,6 +2,30 @@
   /* Стили для контента */
 }
 
+/* section__item.content-wrap.container-sm — родитель секции без класса .content */
+.content-container .section__item.content-wrap.container-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (--lg) {
+  .content-container .section__item.content-wrap.container-sm {
+    gap: 4rem;
+  }
+}
+
 .content .container {
   /* Стили для контейнера в content */
+}
+
+/* Без наклона и сдвига: сбрасываем transform, выравнивание стабильно */
+.content-container.section {
+  transform: none;
+}
+
+.content-container .container,
+.content-container .container-sm,
+.content-container .container-md {
+  transform: none;
 }

@@ -26,7 +26,8 @@
         },
         {
           "title": "Бренд",
-          "href": "/brand/"
+          "href": "/brand/",
+          "visible": false
         },
         {
           "title": "Шины",
@@ -38,7 +39,8 @@
         },
         {
           "title": "Где купить",
-          "href": "/buy/"
+          "href": "/buy/",
+          "visible": false
         }
       ]
     },
@@ -50,7 +52,8 @@
         },
         {
           "title": "Brand",
-          "href": "/brand/"
+          "href": "/brand/",
+          "visible": false
         },
         {
           "title": "Tires",
@@ -62,7 +65,8 @@
         },
         {
           "title": "Where to buy",
-          "href": "/buy/"
+          "href": "/buy/",
+          "visible": false
         }
       ]
     }

@@ -24,8 +24,8 @@
                 {% endif %}
               </div>
               {% if data.heading is defined and (loop.first or not data.slider.items is defined) %}
-                <div class="section__item heading-wrap">
-                  <div class="container">
+                <div class="container intro__heading-container items-center justify-center">
+                  <div class="section__item heading-wrap text-center">
                     {% include 'components/heading.twig' with {'item': data.heading} %}
                   </div>
                 </div>
@@ -38,8 +38,8 @@
               <div class="cover" style="--bg-color: {{ data.background|default('transparent') }};"></div>
             </div>
             {% if data.heading is defined %}
-              <div class="section__item heading-wrap">
-                <div class="container">
+              <div class="container intro__heading-container items-center justify-center">
+                <div class="section__item heading-wrap text-center">
                   {% include 'components/heading.twig' with {'item': data.heading} %}
                 </div>
               </div>

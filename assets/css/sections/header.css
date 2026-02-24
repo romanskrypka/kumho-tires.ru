@@ -8,7 +8,7 @@
   padding: 1rem 1.5rem;
   background: var(--color-1);
   border-radius: 2rem;
-  box-shadow: 0 2px 5px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 2px 5px hsl(0deg 0% 0% / 20%);
   transition: all 0.25s ease-out;
   z-index: var(--z-index-4);
 

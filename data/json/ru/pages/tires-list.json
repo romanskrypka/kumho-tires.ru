@@ -8,7 +8,7 @@
       "data": {
         "heading": {
           "tag": "h1",
-          "class": "heading weight-400 uppercase",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
           "title": "Шины Kumho — модели"
         }
       }

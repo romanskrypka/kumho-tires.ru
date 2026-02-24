@@ -333,6 +333,67 @@ JSON файлы обычных страниц находятся в директ
 }
 ```
 
+## Как разбивать контент
+
+Значения для компонентов (заголовки, классы) задаются **отдельно в JSON**, а не вставляются инлайном в HTML внутри `desc`.
+
+**Нельзя:** один блок с длинным `desc`, в котором заголовки и разметка прописаны вручную:
+
+```json
+{
+  "class": "content-wrap container-sm",
+  "content": "...",
+  "heading": { "tag": "h1", ... },
+  "desc": "Текст... <h2 class=\"h6 heading...\">Подзаголовок</h2> ещё текст..."
+}
+```
+
+**Нужно:** разбить контент на несколько блоков в `content.items`. У каждого блока — свои поля `heading` (если есть подзаголовок) и `desc` (только текст этого фрагмента, без тегов заголовков).
+
+1. Определить логические блоки: вводный текст, блок «Что нужно сделать», блок «Не распространяется на» и т.п.
+2. Для каждого блока создать отдельный элемент в `items` с одним и тем же шаблоном `content` (heading + longread).
+3. Заголовок блока задать в `heading`: `tag`, `class`, `title`.
+4. Текст блока — только в `desc`, без `<h2>`, `<h3>` и других компонентных классов внутри.
+
+**Пример: длинная страница гарантии разбита на три блока**
+
+```json
+"items": [
+  {
+    "class": "content-wrap container-sm",
+    "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+    "heading": {
+      "tag": "h1",
+      "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+      "title": "Расширенная гарантия на шины Kumho"
+    },
+    "desc": "Вводный текст без подзаголовков внутри..."
+  },
+  {
+    "class": "content-wrap container-sm",
+    "content": "...тот же content...",
+    "heading": {
+      "tag": "h2",
+      "class": "h6 heading font-2 weight-600 heading-flex uppercase",
+      "title": "Чтобы воспользоваться гарантией, необходимо:"
+    },
+    "desc": "Только текст и список этого блока, без <h2> в HTML."
+  },
+  {
+    "class": "content-wrap container-sm",
+    "content": "...тот же content...",
+    "heading": {
+      "tag": "h2",
+      "class": "h6 heading font-2 weight-600 heading-flex uppercase",
+      "title": "Гарантия не распространяется на:"
+    },
+    "desc": "Только список исключений."
+  }
+]
+```
+
+Иерархия заголовков: один `h1` на страницу, далее по порядку `h2` (без пропуска до `h3`). Стили заголовков задаются классами (`h1`, `h2`, `h6` и т.д.) в объекте `heading`, а не в разметке внутри `desc`.
+
 ## Правила оформления
 
 ### Заголовки

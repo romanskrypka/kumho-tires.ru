@@ -10,7 +10,7 @@
       "data": {
         "heading": {
           "tag": "h1",
-          "class": "h1 heading heading-flex uppercase",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
           "title": "Контакты"
         },
         "background": {
@@ -85,14 +85,14 @@
               "address": {
                 "heading": {
                   "tag": "h2",
-                  "class": "h5 heading heading-flex uppercase",
+                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
                   "title": "Наши адреса"
                 }
               },
               "connect": {
                 "heading": {
                   "tag": "h2",
-                  "class": "h5 heading heading-flex uppercase",
+                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
                   "title": "Связаться с нами"
                 }
               }
@@ -107,15 +107,15 @@
             },
             {
               "class": "content-wrap social-wrap",
-              "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': {'tag': 'h2', 'class': 'h5 heading heading-flex uppercase', 'title': global['socials-headings'].ru}} %}</div><div class='section__subitem mini-table-wrap container-md'>{% set socialItems = [] %}{% for social in global.socials %}{% if social.visible %}{% set socialItems = socialItems|merge([{'title': social.title.ru, 'href': social.href, 'value': social.subscribers.ru}]) %}{% endif %}{% endfor %}{% include 'components/mini-table.twig' with {'items': socialItems} %}</div>"
+              "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': {'tag': 'h2', 'class': 'h5 heading font-2 weight-700 heading-flex uppercase', 'title': global['socials-headings'].ru}} %}</div><div class='section__subitem mini-table-wrap container-md'>{% set socialItems = [] %}{% for social in global.socials %}{% if social.visible %}{% set socialItems = socialItems|merge([{'title': social.title.ru, 'href': social.href, 'value': social.subscribers.ru}]) %}{% endif %}{% endfor %}{% include 'components/mini-table.twig' with {'items': socialItems} %}</div>"
             },
             {
               "class": "content-wrap form-callback-wrap",
               "content": "<div class='section__subitem heading-wrap container-md'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-md'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",
               "heading": {
                 "tag": "h2",
-                "class": "h5 heading heading-flex uppercase",
-                "title": "Заказать проектирование <span class='nowrap'>Скандинавского сада</span>"
+                "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Получить консультацию"
               },
               "catalogs": [
                 {
