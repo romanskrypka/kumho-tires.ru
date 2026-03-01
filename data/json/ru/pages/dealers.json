@@ -1,0 +1,3254 @@
+{
+  "items": [
+    {
+      "id": 4,
+      "name": "Колесо.ру",
+      "region": "МО",
+      "city": "Немчиновка",
+      "location": "55.72535332357992, 37.37778946361503",
+      "address": "МО, Одинцовский р-н, пос. Немчиновка, ул. Московская, вл. 63 Северная сторона, авторынок «АвтоМОЛЛ», пав. 40/1 (55й км МКАД, пересечение с ул. Горбунова)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.79084977599949, 37.36525013624531",
+      "address": "Москва, 62-й км МКАД, вл.7, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.61965385816031, 37.54280317790951",
+      "address": "Москва, ул. Айвазовского, вл. 2Ас2, АЗС «РН» (Ясенево)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.82222897995407, 37.60334020237702",
+      "address": "Москва, Академика Королёва ул., д. 12А, АЗС «РН» (Останкино)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.71078243105749, 37.44606332142601",
+      "address": "Москва, Верейская ул., д.7, стр.2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.72730269890201, 37.679466322752944",
+      "address": "Москва, Волгоградский пр-т, д. 24, стр. 1, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.826318529005206, 37.42017789681966",
+      "address": "Москва, Волоколамское ш., д. 79, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.854624717535486, 37.40796870800363",
+      "address": "Москва, ул. Героев Панфиловцев, д. 26",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.858372887412536, 37.623325096889005",
+      "address": "Москва, Декабристов ул., вл. 49Б, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.84140934377571, 37.35388695204491",
+      "address": "Москва, ул. Дубравная, д.51, стр.1. ТЦ \"Митино Парк\"",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.695212670749406, 37.61097918154484",
+      "address": "Москва, Загородное шоссе, д. 7, корп.1 (метро Тульская, Шаболовская)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.981630540471315, 37.162418770499855",
+      "address": "Москва, Зеленоград, корп. 1812",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "56.014343752809914, 37.204846488429844",
+      "address": "Москва, Зеленоград, проезд 4801, д.3, стр.1,2, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.99738178030066, 37.23628783432328",
+      "address": "Москва, Зеленоград, корп. 514, стр. 1, нежилое помещение 2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.88808590695899, 37.509883661376804",
+      "address": "Москва, ул. Ижорская, вл. 8Б (Дегунино)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.5685360474604, 37.56108063558164",
+      "address": "Москва, ул. Куликовская, д. 20, стр. 1 (Северное Бутово)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.64334877894076, 37.47204172156498",
+      "address": "Москва, Ленинский пр-кт, вл. 137А, АЗС «Роснефть» (Тёплый Стан)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.65828692658022, 37.73876154232758",
+      "address": "Москва, Люблинская ул., д. 92, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.81385, 37.39355",
+      "address": "Москва, ул. Маршала Катукова, д. 1 (Строгино)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 23,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.69983890672034, 37.50581059143555",
+      "address": "Москва, Мичуринский пр-т, д. 21, корп. 2 (Раменки)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.71672168290933, 37.41029737186218",
+      "address": "Москва, Можайское шоссе, д. 43, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.67103907003182, 37.58283794592844",
+      "address": "Москва, Нахимовский проспект, д. 24А, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 26,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.70980382978806, 37.85040858283746",
+      "address": "Новоухтомское шоссе, дом 2А, стр. 3",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 27,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.889477275617814, 37.58914818898942",
+      "address": "Москва, ул. Пришвина, д. 2А (Алтуфьево, Бибирево)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 28,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.79540138314571, 37.635014600033855",
+      "address": "Москва, Проспект Мира вл94с1В, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 29,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.655046549106615, 37.536052622020335",
+      "address": "Москва, ул. Профсоюзная, д. 84А, стр. 2, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 30,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.71945567562165, 37.777351588954836",
+      "address": "Москва, Рязанский проспект, д.26 корп.2, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 31,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.862206, 37.447611",
+      "address": "Москва, ул. Свободы, д. 79 (Тушино, Планерная)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 32,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.89320991338889, 37.67421904662661",
+      "address": "Москва, ул. Северодвинская, вл. 20А (Медведково, Осташковская улица)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 33,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.63703614484231, 37.33918232142606",
+      "address": "Москва, ул. Скульптора Мухиной, д.13 (Ново-Переделкино, Боровское шоссе)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 34,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.82434503636004, 37.55809116434813",
+      "address": "Москва, ул. Тимирязевская, д. 38А, АЗС «РН»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 35,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.61956321417998, 37.715989076057305",
+      "address": "Москва, ул. Шипиловская, д. 28Г (Орехово-Борисово Северное)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 36,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.77610760291502, 37.83482098280309",
+      "address": "Москва, шоссе Энтузиастов, д. 63, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 37,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.80254617157472, 37.7559180823475",
+      "address": "Москва, Щелковское ш., д.2/1, стр.3, АЗС «Роснефть» (въезд со стороны улицы Вернисажная)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 38,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.812345201281225, 37.82799960978644",
+      "address": "Москва, Щелковское шоссе, д. 98/57 (Гольяново, Измайлово)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 39,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.50164305740997, 37.57208256564121",
+      "address": "Москва, Щербинка, Симферопольское ш. 7А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 40,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.86305432941459, 37.69809436805309",
+      "address": "Москва, Ярославское ш., д. 38 стр. 1 (Ростокино)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 41,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.602373833112765, 37.72307406994046",
+      "address": "Москва, ул. Ясеневая, д.13, АЗС «Роснефть» (Орехово-Борисово Южное)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 42,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Балашиха",
+      "location": "55.7473186648478, 38.05607659755297",
+      "address": "МО, г. Балашиха, дер. Чёрное, ул. Агрогородок, вл. 77",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 43,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Балашиха",
+      "location": "55.79168842502981, 37.895685283397086",
+      "address": "МО, г. Балашиха, ш. Энтузиастов, д. 1/2 (подъезд со стороны Объездного шоссе)",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 44,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Балашиха",
+      "location": "55.79880483712965, 37.98936884292159",
+      "address": "МО, г. Балашиха, шоссе Энтузиастов, д. 84 (около АЗК \"Нефтьмагистраль\")",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 45,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Балашиха",
+      "location": "55.82772941817889, 37.90205223694392",
+      "address": "МО, г. Балашиха, Щелковское шоссе, вл. 1Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 46,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Красногорск",
+      "location": "55.81897469700013, 37.343990887067484",
+      "address": "МО, г. Красногорск, Знаменская ул., д.9, АЗС «Роснефть»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 47,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Красногорск",
+      "location": "55.824487660032254, 37.316172914016555",
+      "address": "МО, г. Красногорск, ул. Ленина, д. 5",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 48,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Черная грязь",
+      "location": "55.97498662316124, 37.30589973379858",
+      "address": "МО, Ленинградское шоссе, городской округ Химки, деревня Чёрная Грязь, с18М",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 49,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Мытищи",
+      "location": "55.93136336030119, 37.75199874603216",
+      "address": "МО, г. Мытищи, Олимпийский пр-т, стр. 31А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 50,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Орехово-Зуево",
+      "location": "55.82442723483565, 38.96392998280283",
+      "address": "МО, г. Орехово-Зуево, Малодубенское шоссе, д. 3",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 51,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Подольск",
+      "location": "55.407397, 37.55381",
+      "address": "МО, г. Подольск, ул. Правды, д. 40",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 52,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Химки",
+      "location": "55.89217930753889, 37.48590223677035",
+      "address": "МО, г. Химки, улица Пожарского, 204-Е УСМР",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 53,
+      "name": "Колесо.ру",
+      "region": "Московская область",
+      "city": "Электроугли",
+      "location": "55.726284, 38.219309",
+      "address": "МО, Ногинский р-н, г. Электроугли, ул. Железнодорожная, вл. 29, стр. 1, ЛК «Восток-Авто»",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 54,
+      "name": "Колесо.ру",
+      "region": "Нижегородская область",
+      "city": "Арзамас",
+      "location": "55.38062645723582, 43.82048072023771",
+      "address": "Нижегородская область, Арзамас, улица Космонавтов, 12",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 55,
+      "name": "Колесо.ру",
+      "region": "Алтайский край",
+      "city": "Барнаул",
+      "location": "53.32708084628195, 83.65653587235215",
+      "address": "Алтайский край, Барнаул, улица Попова, 167Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 56,
+      "name": "Колесо.ру",
+      "region": "Новгородская область",
+      "city": "Великий Новгород",
+      "location": "58.54996305436189, 31.26606099999996",
+      "address": "Великий Новгород, Большая Санкт-Петербургская улица, 51Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 57,
+      "name": "Колесо.ру",
+      "region": "Владимирская область",
+      "city": "Владимир",
+      "location": "56.15209106405204, 40.41648172883605",
+      "address": "Владимир, улица Полины Осипенко, 40А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 58,
+      "name": "Колесо.ру",
+      "region": "Волгоградская область",
+      "city": "Волгоград",
+      "location": "48.76653660636157, 44.539621533729346",
+      "address": "Волгоград, улица Маршала Ерёменко, 5",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 59,
+      "name": "Колесо.ру",
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "location": "51.662646, 39.273814",
+      "address": "Воронеж, улица Димитрова, 100Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 60,
+      "name": "Колесо.ру",
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "location": "51.645335687067174, 39.13141848213926",
+      "address": "Воронеж, проспект Патриотов, 23Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 61,
+      "name": "Колесо.ру",
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "location": "51.68253029119713, 39.20967972023768",
+      "address": "Воронеж, улица Урицкого, 20",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 62,
+      "name": "Колесо.ру",
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "location": "51.5997853184734, 39.24852503306548",
+      "address": "Воронеж, улица Чебышева, 24А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 63,
+      "name": "Колесо.ру",
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "location": "51.741053460833115, 39.30107793981099",
+      "address": "Воронеж, Планетная улица, 26",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 64,
+      "name": "Колесо.ру",
+      "region": "Нижегородская область",
+      "city": "Дзержинск",
+      "location": "56.303446361388744, 43.59079298014725",
+      "address": "Нижегородская область, городской округ Дзержинск, М-7 Волга, 392-й километр, 2Ас1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 65,
+      "name": "Колесо.ру",
+      "region": "Нижегородская область",
+      "city": "Дзержинск",
+      "location": "56.245856625001046, 43.42822653372949",
+      "address": "Нижегородская область, Дзержинск, проспект Ленина, 4",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 66,
+      "name": "Колесо.ру",
+      "region": "Свердловская область",
+      "city": "Берёзовский",
+      "location": "56.920786844273636, 60.76522220901341",
+      "address": "Свердловская область, Берёзовский, Режевской тракт, 15-й километр, 2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 67,
+      "name": "Колесо.ру",
+      "region": "Свердловская область",
+      "city": "Екатеринбург",
+      "location": "56.89294792633656, 60.57356641468001",
+      "address": "Свердловская область, Екатеринбург, улица Бакинских Комиссаров, 2Б",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 68,
+      "name": "Колесо.ру",
+      "region": "Свердловская область",
+      "city": "Екатеринбург",
+      "location": "56.84361508245481, 60.68752777777051",
+      "address": "Свердловская область, Екатеринбург, улица Владимира Высоцкого, 29",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 69,
+      "name": "Колесо.ру",
+      "region": "Свердловская область",
+      "city": "Екатеринбург",
+      "location": "56.80484, 60.578277",
+      "address": "Свердловская область, Екатеринбург, Волгоградская улица, 84",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 70,
+      "name": "Колесо.ру",
+      "region": "Ивановоская область",
+      "city": "Иваново",
+      "location": "56.96993392656652, 40.98446788954898",
+      "address": "Иваново, улица Кудряшова, 78",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 71,
+      "name": "Колесо.ру",
+      "region": "Республика Татарстан",
+      "city": "Казань",
+      "location": "55.770133968221586, 49.12251975463073",
+      "address": "Республика Татарстан, Казань, улица Габдуллы Тукая, 130",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 72,
+      "name": "Колесо.ру",
+      "region": "Республика Татарстан",
+      "city": "Казань",
+      "location": "55.835422, 49.160232",
+      "address": "Республика Татарстан, Казань, улица Гаврилова, 23",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 73,
+      "name": "Колесо.ру",
+      "region": "Калужская область",
+      "city": "Калуга",
+      "location": "54.564021, 36.266416",
+      "address": "Калуга, Азаровская улица, 26",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 74,
+      "name": "Колесо.ру",
+      "region": "Калужская область",
+      "city": "Калуга",
+      "location": "54.51523575696706, 36.241429226844524",
+      "address": "Калуга, улица Гагарина, 1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 75,
+      "name": "Колесо.ру",
+      "region": "Калужская область",
+      "city": "Калуга",
+      "location": "54.544133, 36.29942",
+      "address": "Калуга, Зерновая улица, 15Д",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 76,
+      "name": "Колесо.ру",
+      "region": "Калужская область",
+      "city": "Калуга",
+      "location": "54.515136, 36.243554",
+      "address": "Калуга, площадь Мира, 3",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 77,
+      "name": "Колесо.ру",
+      "region": "Краснодарский край",
+      "city": "Краснодар",
+      "location": "44.95194304660766, 39.12290373743403",
+      "address": "Краснодар, Восточный обход, 3/1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 78,
+      "name": "Колесо.ру",
+      "region": "Краснодарский край",
+      "city": "Краснодар",
+      "location": "45.027406, 39.029059",
+      "address": "Краснодар, Карасунский внутригородской округ, микрорайон Хлопчато-бумажный Комбинат, Ялтинская улица, 2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 79,
+      "name": "Колесо.ру",
+      "region": "Курскская область",
+      "city": "Курск",
+      "location": "51.721301, 36.187886",
+      "address": "Курск, улица Пионеров, 2А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 80,
+      "name": "Колесо.ру",
+      "region": "Курскская область",
+      "city": "Курск",
+      "location": "51.657814, 36.134867",
+      "address": "Курск, проспект Кулакова, 148Г",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 81,
+      "name": "Колесо.ру",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.295925, 43.950884",
+      "address": "Нижний Новгород, Молитовская улица, 4А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 82,
+      "name": "Колесо.ру",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.21080658318035, 43.80867374868714",
+      "address": "Нижний Новгород, Ореховская улица, 80к3",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 83,
+      "name": "Колесо.ру",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "55.060725, 82.936959",
+      "address": "Новосибирск, Ипподромская улица, 50Ак1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 84,
+      "name": "Колесо.ру",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "55.006141, 82.968867",
+      "address": "Новосибирск, улица Кирова, 232А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 85,
+      "name": "Колесо.ру",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "54.93130594132167, 83.13112529695859",
+      "address": "Новосибирск, улица Твардовского, 3/1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 86,
+      "name": "Колесо.ру",
+      "region": "Пермский край",
+      "city": "Пермь",
+      "location": "57.9626, 56.158099",
+      "address": "Пермь, улица Архитектора Свиязева, 43",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 87,
+      "name": "Колесо.ру",
+      "region": "Пермский край",
+      "city": "Пермь",
+      "location": "57.96902598859565, 56.26084049339245",
+      "address": "Пермь, улица Героев Хасана, 48к1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 88,
+      "name": "Колесо.ру",
+      "region": "Пермский край",
+      "city": "Краснокамск",
+      "location": "58.069214, 55.791703",
+      "address": "Пермский край, Краснокамск, Шоссейная улица, 59",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 89,
+      "name": "Колесо.ру",
+      "region": "Пермский край",
+      "city": "Пермь",
+      "location": "58.014059, 56.220658",
+      "address": "Пермь, Свердловская улица, 2А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 90,
+      "name": "Колесо.ру",
+      "region": "Пермский край",
+      "city": "Пермь",
+      "location": "58.068229, 56.344598",
+      "address": "Пермь, Соликамская улица, 271А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 91,
+      "name": "Колесо.ру",
+      "region": "Республика Карелия",
+      "city": "Петрозаводск",
+      "location": "61.804998, 34.291668",
+      "address": "Республика Карелия, Петрозаводск, Новосулажгорская улица, 5",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 92,
+      "name": "Колесо.ру",
+      "region": "Ростовская область",
+      "city": "Ростов-на-Дону",
+      "location": "47.278266, 39.775748",
+      "address": "Ростов-на-Дону, Вятская улица, 120А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 93,
+      "name": "Колесо.ру",
+      "region": "Ростовская область",
+      "city": "Ростов-на-Дону",
+      "location": "47.237388, 39.629987",
+      "address": "Ростов-на-Дону, улица Доватора, 159",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 94,
+      "name": "Колесо.ру",
+      "region": "Ростовская область",
+      "city": "Ростов-на-Дону",
+      "location": "47.246084388800156, 39.77084818650766",
+      "address": "Ростов-на-Дону, проспект Шолохова, 81А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 95,
+      "name": "Колесо.ру",
+      "region": "Рязанская область",
+      "city": "Рязань",
+      "location": "54.661685498621864, 39.662636592590125",
+      "address": "Рязань, улица Бирюзова, 25",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 96,
+      "name": "Колесо.ру",
+      "region": "Рязанская область",
+      "city": "Рязань",
+      "location": "54.639169, 39.67555",
+      "address": "Рязань, Московское шоссе, 31с1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 97,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Салават",
+      "location": "53.373649, 55.940437",
+      "address": "Республика Башкортостан, Салават, Северная улица, 31",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 98,
+      "name": "Колесо.ру",
+      "region": "Самарская область",
+      "city": "Самара",
+      "location": "53.202594, 50.226963",
+      "address": "Самара, улица Победы, 1А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 99,
+      "name": "Колесо.ру",
+      "region": "Самарская область",
+      "city": "Самара",
+      "location": "53.3090121892308, 50.29664561670606",
+      "address": "Самара, пос. Мехзавод, Московское шоссе, 20",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 100,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "59.991529, 30.354541",
+      "address": "Санкт-Петербург, Политехническая улица, 3к1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 101,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "59.790879, 30.453122",
+      "address": "Санкт-Петербург, Пушкинский район, посёлок Шушары, Московское шоссе, 161к10",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 102,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "59.862262, 30.259014",
+      "address": "Санкт-Петербург, проспект Стачек, 81к2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 103,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "59.98566, 30.245961",
+      "address": "Санкт-Петербург, улица Савушкина, 89К",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 104,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "59.89719213206685, 30.407097256621924",
+      "address": "Санкт-Петербург, улица Седова, 13",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 105,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "60.08244419951847, 29.957332644179523",
+      "address": "Санкт-Петербург, Сестрорецк, Приморское шоссе, 264А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 106,
+      "name": "Колесо.ру",
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "location": "60.06272660773159, 30.329354866408856",
+      "address": "Санкт-Петербург, улица Симонова, 15",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 107,
+      "name": "Колесо.ру",
+      "region": "Саратовская область",
+      "city": "Саратов",
+      "location": "51.488332, 45.901746",
+      "address": "Саратов, Ново-Астраханское шоссе, 113",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 108,
+      "name": "Колесо.ру",
+      "region": "Саратовская область",
+      "city": "Энгельс",
+      "location": "51.508265, 46.18326",
+      "address": "Саратовская область, Энгельс, Студенческая улица, 185Д",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 109,
+      "name": "Колесо.ру",
+      "region": "Краснодарский край",
+      "city": "Сочи",
+      "location": "43.62445986641855, 39.745543492065174",
+      "address": "Краснодарский край, Сочи, Пластунская улица, 157/5",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 110,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Стерлитамак",
+      "location": "53.655258386680494, 55.84685658993445",
+      "address": "Республика Башкортостан, Стерлитамакский район, Р-240, 124-й километр",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 111,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Стерлитамак",
+      "location": "53.61327051840056, 55.94187786011867",
+      "address": "Республика Башкортостан, Стерлитамак, улица 23 Мая, 34",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 112,
+      "name": "Колесо.ру",
+      "region": "Тамбовская область",
+      "city": "Тамбов",
+      "location": "52.734581, 41.395761",
+      "address": "Тамбов, Бастионная улица, 1Ж",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 113,
+      "name": "Колесо.ру",
+      "region": "Самарская область",
+      "city": "Тольятти",
+      "location": "53.533977, 49.397217",
+      "address": "Самарская область, Тольятти, улица Кирова, 32",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 114,
+      "name": "Колесо.ру",
+      "region": "Самарская область",
+      "city": "Тольятти",
+      "location": "53.527951, 49.281954",
+      "address": "Самарская область, Тольятти, Юбилейная улица, 19А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 115,
+      "name": "Колесо.ру",
+      "region": "Томская область",
+      "city": "Томск",
+      "location": "56.489436, 84.968966",
+      "address": "Томск, улица Яковлева, 71",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 116,
+      "name": "Колесо.ру",
+      "region": "Тульская область",
+      "city": "Тула",
+      "location": "54.213151, 37.597172",
+      "address": "Тула, Курковая улица, 32",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 117,
+      "name": "Колесо.ру",
+      "region": "Тульская область",
+      "city": "Тула",
+      "location": "54.261788, 37.48172",
+      "address": "Тульская область, муниципальное образование Тула, сельский посёлок Барсуки, Шоссейная улица, 1А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 118,
+      "name": "Колесо.ру",
+      "region": "Тульская область",
+      "city": "Тула",
+      "location": "54.161082, 37.612766",
+      "address": "Тула, Рязанская улица, 34Г",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 119,
+      "name": "Колесо.ру",
+      "region": "Тюменская область",
+      "city": "Тюмень",
+      "location": "57.120016, 65.62468",
+      "address": "Тюмень, улица 50 лет Октября, 202литА",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 120,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.73895310687631, 55.972135492064886",
+      "address": "Республика Башкортостан, Уфа, улица 50-летия Октября, 15",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 121,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.69623980329298, 55.849059103179286",
+      "address": "Республика Башкортостан, Уфа, улица Демьяна Бедного, 16/1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 122,
+      "name": "Колесо.ру",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.77887121694359, 56.068700728835424",
+      "address": "Республика Башкортостан, Уфа, улица Маршала Жукова, 39/2",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 123,
+      "name": "Колесо.ру",
+      "region": "Ярославская область",
+      "city": "Ярославль",
+      "location": "57.667663, 39.769693",
+      "address": "Ярославль, Осташинская улица, 51В",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 124,
+      "name": "Колесо.ру",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "55.104538, 82.949427",
+      "address": "Новосибирск, улица Мясниковой, 17к1",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 125,
+      "name": "Колесо.ру",
+      "region": "Красноярская область",
+      "city": "Красноярск",
+      "location": "55.999012, 92.914744",
+      "address": "Красноярск, проспект имени Газеты Красноярский Рабочий, 150Ж",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 126,
+      "name": "Колесо.ру",
+      "region": "Красноярская область",
+      "city": "Красноярск",
+      "location": "56.066721, 92.928803",
+      "address": "Красноярск, улица 9 Мая, 10А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 127,
+      "name": "Колесо.ру",
+      "region": "Красноярская область",
+      "city": "Красноярск",
+      "location": "56.029813, 92.775182",
+      "address": "Красноярск, Высотная улица, 35А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 128,
+      "name": "Колесо.ру",
+      "region": "Красноярская область",
+      "city": "Красноярск",
+      "location": "56.018107, 92.8191",
+      "address": "Красноярск, Новосибирская улица, 11",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    }
+  ]
+}

@@ -74,6 +74,7 @@ return [
         'policy',
         'agree',
         'tires-list',
+        'buy',
         'news',
     ],
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)

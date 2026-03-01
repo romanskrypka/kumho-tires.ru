@@ -28,6 +28,8 @@ import './sections/cookie-panel.js';
 import './sections/contacts.js';
 import './sections/headline.js';
 import './sections/us.js';
+import './sections/tires.js';
+import './sections/dealers.js';
 
 // --- Components ---
 import './components/button.js';

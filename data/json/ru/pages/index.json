@@ -74,6 +74,15 @@
       "name": "tires",
       "visible": true,
       "data": {
+        "filter": {
+          "visible": false
+        },
+        "preview_limit": 8,
+        "all_models_link": {
+          "visible": true,
+          "title": "Все модели",
+          "href": "/tires/"
+        },
         "heading": {
           "tag": "h2",
           "class": "h2 heading font-2 weight-700 heading-flex uppercase",

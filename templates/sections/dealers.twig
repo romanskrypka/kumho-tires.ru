@@ -1,0 +1,133 @@
+<section class="dealers section" id="dealers">
+  <div class="container">
+    {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
+    {% set dealerItems = dealersData.items | default(data.items | default([])) %}
+    {% set filterVisible = true %}
+    {% if data.filter is defined %}
+      {% if data.filter is iterable %}
+        {% set filterVisible = data.filter.visible is defined ? data.filter.visible : true %}
+      {% else %}
+        {% set filterVisible = data.filter ? true : false %}
+      {% endif %}
+    {% endif %}
+    {% set cityOptions = [] %}
+    {% set hasBshm = false %}
+    {% for dealer in dealerItems %}
+      {% set dealerCity = dealer.city | default('') | trim %}
+      {% set bshmData = dealer.bshm | default({}) %}
+      {% set bshmVisible = bshmData.visible | default(false) %}
+      {% if dealerCity and dealerCity not in cityOptions %}
+        {% set cityOptions = cityOptions | merge([dealerCity]) %}
+      {% endif %}
+      {% if bshmVisible %}
+        {% set hasBshm = true %}
+      {% endif %}
+    {% endfor %}
+    {% if data.heading is defined %}
+      <div class="section__item heading-wrap">
+        <span class="heading-accent self-start" aria-hidden="true"></span>
+        {% include 'components/heading.twig' with {'item': data.heading} %}
+      </div>
+    {% endif %}
+
+    {% if filterVisible %}
+      {% set citySelectOptions = [{'value': '', 'label': 'Все'}] %}
+      {% for city in cityOptions | sort %}
+        {% set citySelectOptions = citySelectOptions|merge([{'value': city, 'label': city}]) %}
+      {% endfor %}
+      {% set dealerFilterGroups = [
+        {
+          'type': 'select',
+          'class': 'select-wrap',
+          'id': 'dealers-city',
+          'label': 'Город',
+          'select_class': 'custom-select js-dealers-city',
+          'options': citySelectOptions
+        },
+        {
+          'type': 'toggle',
+          'class': 'option-wrap',
+          'label': 'Расширенная гарантия',
+          'input_class': 'filter__checkbox js-dealers-guarantee'
+        }
+      ] %}
+      {% if hasBshm %}
+        {% set dealerFilterGroups = dealerFilterGroups|merge([
+          {
+            'type': 'toggle',
+            'class': 'option-wrap',
+            'label': 'Бесплатный шиномонтаж',
+            'input_class': 'filter__checkbox js-dealers-bshm'
+          }
+        ]) %}
+      {% endif %}
+      {% set dealersFilter = {
+        'root_class': 'section__item filter-wrap js-dealers-filter',
+        'groups': dealerFilterGroups
+      } %}
+      {% include 'components/filter.twig' with {'filter': dealersFilter} %}
+    {% endif %}
+
+    {% if data.map is defined %}
+      <div class="section__item map-wrap">
+        {% set mapCenter = data.map.center|default('55.755819, 37.617644') %}
+        {% set mapZoom = data.map.zoom|default(5) %}
+        <div
+          class="map js-map js-dealers-map"
+          data-center="{{ mapCenter }}"
+          data-zoom="{{ mapZoom }}"
+          data-geolocation="{{ data.map.geolocation|default(false) ? '1' : '0' }}"
+          data-fallback-src="{{ data.map.src|default('') }}"
+          aria-label="Карта точек продаж">
+          {% for item in dealerItems %}
+            {% set dealerId = item.id | default(loop.index) %}
+            {% set phones = item.phones | default([]) %}
+            {% set guaranteeData = item.guarantee | default({}) %}
+            {% set bshmData = item.bshm | default({}) %}
+            {% set guaranteeVisible = guaranteeData.visible | default(false) %}
+            {% set guaranteeTitle = guaranteeData.title | default('Расширенная гарантия') %}
+            {% set bshmVisible = bshmData.visible | default(false) %}
+            {% set bshmTitle = bshmData.title | default('Бесплатный шиномонтаж') %}
+            {% if item.location is defined and item.location %}
+              <div
+                class="map__placemark"
+                data-id="{{ dealerId }}"
+                data-location="{{ item.location }}"
+                data-city="{{ item.city | default('') | e('html_attr') }}"
+                data-guarantee="{{ guaranteeVisible ? '1' : '0' }}"
+                data-guarantee-title="{{ guaranteeTitle | e('html_attr') }}"
+                data-bshm="{{ bshmVisible ? '1' : '0' }}"
+                data-bshm-title="{{ bshmTitle | e('html_attr') }}"
+                data-name="{{ item.name|default('')|e('html_attr') }}"
+                data-address="{{ item.address|default('')|e('html_attr') }}"
+                data-phones="{{ phones|json_encode|e('html_attr') }}"
+                data-site="{{ item.site.title|default(item.site|default(''))|e('html_attr') }}"
+                data-site-href="{{ item.site.href|default(item.site_href|default(''))|e('html_attr') }}">
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if dealerItems is not empty %}
+      <div class="section__item cards-wrap">
+        {% for item in dealerItems %}
+          {% set dealerId = item.id | default(loop.index) %}
+          {% set guaranteeData = item.guarantee | default({}) %}
+          {% set bshmData = item.bshm | default({}) %}
+          {% set guaranteeVisible = guaranteeData.visible | default(false) %}
+          {% set bshmVisible = bshmData.visible | default(false) %}
+          <div
+            class="section__subitem card-wrap js-dealer-card"
+            data-id="{{ dealerId }}"
+            data-city="{{ item.city | default('') | e('html_attr') }}"
+            data-guarantee="{{ guaranteeVisible ? '1' : '0' }}"
+            data-bshm="{{ bshmVisible ? '1' : '0' }}">
+            {% include 'components/card-dealer.twig' with {'item': item} %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
