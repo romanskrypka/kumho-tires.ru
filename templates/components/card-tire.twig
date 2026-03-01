@@ -11,7 +11,16 @@
       <span class="card__desc">{{ item.item.series }}</span>
     </div>
   {% endif %}
+  {% if item.item.frame is defined and item.item.frame %}
+    <div class="card__item frame-wrap">
+      <span class="card__frame">{{ item.item.frame }}</span>
+    </div>
+  {% endif %}
+  {% set imageSrc = item.image is defined and item.image.src is defined
+    ? item.image.src
+    : 'data/img/tires/hs51/400/hs51-30deg.webp' %}
+  {% set imageSrcCard = imageSrc|replace({'/raw/': '/400/'}) %}
   <div class="card-tire__img-wrap">
-    <img src="{{ url('data/img/tires/hs51/Kumho_ECSTA HS51.png') }}" alt="" class="card-tire__img img-responsive" loading="lazy">
+    <img src="{{ url(imageSrcCard) }}" alt="" class="card-tire__img img-responsive" loading="lazy">
   </div>
 </div>

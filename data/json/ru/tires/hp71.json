@@ -6,6 +6,9 @@
     "series": "CRUGEN",
     "name": "Kumho HP71 CRUGEN"
   },
+  "image": {
+    "src": "data/img/tires/hp71/raw/hp71-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho HP71 CRUGEN"
   }

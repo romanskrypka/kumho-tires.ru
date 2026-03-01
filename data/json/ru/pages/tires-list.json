@@ -3,6 +3,15 @@
   "sections": [
     {"name": "header", "visible": true, "data": {}},
     {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": {
+          "src": "data/img/frames/1.png"
+        }
+      }
+    },
+    {
       "name": "tires",
       "visible": true,
       "data": {

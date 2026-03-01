@@ -6,6 +6,9 @@
     "series": "Ecowing",
     "name": "Kumho KH11 Ecowing"
   },
+  "image": {
+    "src": "data/img/tires/kh11/raw/kh11-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho KH11 Ecowing"
   }

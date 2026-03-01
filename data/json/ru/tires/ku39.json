@@ -6,6 +6,9 @@
     "series": "ECSTA",
     "name": "Kumho KU39 ECSTA"
   },
+  "image": {
+    "src": "data/img/tires/ku39/raw/ku39-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho KU39 ECSTA"
   }

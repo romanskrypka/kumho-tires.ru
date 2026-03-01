@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho MT71 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/mt71/raw/mt71-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho MT71 Road Venture"
   }

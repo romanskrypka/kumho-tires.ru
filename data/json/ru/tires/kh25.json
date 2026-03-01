@@ -6,6 +6,9 @@
     "series": "Ecowing",
     "name": "Kumho KH25 Ecowing"
   },
+  "image": {
+    "src": "data/img/tires/kh25/raw/kh25-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho KH25 Ecowing"
   }

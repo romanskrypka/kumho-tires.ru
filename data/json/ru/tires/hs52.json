@@ -6,6 +6,9 @@
     "series": "ECSTA",
     "name": "Kumho HS52 ECSTA"
   },
+  "image": {
+    "src": "data/img/tires/hs52/raw/hs52-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho HS52 ECSTA"
   }

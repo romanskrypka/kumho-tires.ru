@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho TA31 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/ta31/raw/ta31-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho TA31 Road Venture"
   }

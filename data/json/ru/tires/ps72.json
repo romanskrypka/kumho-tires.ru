@@ -6,6 +6,9 @@
     "series": "ECSTA Sport S",
     "name": "Kumho PS72 ECSTA Sport S"
   },
+  "image": {
+    "src": "data/img/tires/ps72/raw/ps72-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho PS72 ECSTA Sport S"
   }

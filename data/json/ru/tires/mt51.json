@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho MT51 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/mt51/raw/mt51-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho MT51 Road Venture"
   }

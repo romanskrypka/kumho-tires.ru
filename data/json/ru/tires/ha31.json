@@ -6,6 +6,9 @@
     "series": "SOLUS",
     "name": "Kumho HA31 SOLUS"
   },
+  "image": {
+    "src": "data/img/tires/ha31/raw/ha31-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho HA31 SOLUS"
   }

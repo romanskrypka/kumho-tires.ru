@@ -7,7 +7,7 @@
     "name": "Kumho HP91 CRUGEN"
   },
   "image": {
-    "src": "data/img/tires/hp91/hp91.jpg"
+    "src": "data/img/tires/hp91/raw/hp91-30deg.webp"
   },
   "images": {
     "sidewall": "data/img/tires/hp91/hp91-sidewall.jpg",

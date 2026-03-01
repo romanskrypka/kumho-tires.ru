@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho KL33 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/kl33/raw/kl33-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho KL33 Road Venture"
   }

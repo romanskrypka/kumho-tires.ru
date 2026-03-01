@@ -15,22 +15,11 @@
 
 .card-tire:hover {
   border-color: var(--color-3);
-  background: rgb(0 0 0 / 2%);
 }
 
 .card-tire__img-wrap {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  overflow: hidden;
-  border-radius: 0.25rem;
-}
-
-.card-tire__img {
-  display: block;
-  width: 80%;
-  height: auto;
-  object-fit: contain;
+  width: 60%;
+  align-self: flex-end;
 }
 
 .card-tire .card__title {
@@ -42,5 +31,13 @@
 }
 
 .card-tire .card__desc {
+  color: var(--color-5);
+}
+
+.card-tire .frame-wrap {
+  margin-top: 0.25rem;
+}
+
+.card-tire .card__frame {
   color: var(--color-5);
 }

@@ -6,6 +6,9 @@
     "series": "Ecowing",
     "name": "Kumho ES31 Ecowing"
   },
+  "image": {
+    "src": "data/img/tires/es31/raw/es31-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho ES31 Ecowing"
   }

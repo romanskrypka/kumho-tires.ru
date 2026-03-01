@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho AT52 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/at52/raw/at52-front.webp"
+  },
   "desc": {
     "short": "Шина Kumho AT52 Road Venture"
   }

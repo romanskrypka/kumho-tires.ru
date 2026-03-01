@@ -6,6 +6,9 @@
     "series": "PorTran",
     "name": "Kumho KC53 PorTran"
   },
+  "image": {
+    "src": "data/img/tires/kc53/raw/kc53-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho KC53 PorTran"
   }

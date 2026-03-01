@@ -6,6 +6,9 @@
     "series": "Road Venture",
     "name": "Kumho AT61 Road Venture"
   },
+  "image": {
+    "src": "data/img/tires/at61/raw/at61-30deg.webp"
+  },
   "desc": {
     "short": "Шина Kumho AT61 Road Venture"
   }
