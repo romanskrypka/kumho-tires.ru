@@ -1,0 +1,37 @@
+<header class="header js-header" itemscope itemtype="https://schema.org/Organization">
+  <div class="section__item block-wrap">
+    <div class="section__subitem logo-wrap">
+      <a href="/" class="link header__logo" itemprop="url">
+        <img src="{{ url(global.logo.vertical.black.src|default('data/img/ui/logos/logo-v-color-2.svg')) }}" alt="{{ global.logo.vertical.black.alt|default('Logo') }}" class="img-responsive" itemprop="logo">
+      </a>
+    </div>
+    <nav class="section__subitem nav-wrap" aria-label="Основное меню">
+      {% set pageKey = pageData.name|default(page_id|default('')) %}
+      {% for item in global.nav[lang_code].items %}
+        {% if item.visible is not defined or item.visible %}
+        {% set itemHref = item.href|default('/') %}
+        {% set normalizedItemHref = itemHref|trim('/') %}
+        {% set isActive = false %}
+        {% if normalizedItemHref == '' %}
+          {% set isActive = pageKey == 'index' %}
+        {% elseif item.active_for is defined and pageKey in item.active_for %}
+          {% set isActive = true %}
+        {% else %}
+          {% set isActive = pageKey == normalizedItemHref %}
+        {% endif %}
+        <div class="section__inner nav-link-wrap">
+          <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}">{{ item.title }}</a>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <div class="section__subitem burger-icon-wrap">
+      {% include 'components/burger-icon.twig' %}
+    </div>
+    <div class="section__subitem burger-menu-wrap">
+      {% include 'components/burger-menu.twig' with {
+        items: global.nav[lang_code].items
+      } %}
+    </div>
+  </div>
+</header>

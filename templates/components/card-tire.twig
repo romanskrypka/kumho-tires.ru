@@ -1,0 +1,38 @@
+{% set name = item.item.name | default(item.item.code | default('')) %}
+{# Временно без перехода на страницу модели #}
+{% set href = null %}
+
+<div class="card-tire">
+  <div class="card__item title-wrap">
+    <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
+  </div>
+  {% if item.item.series is defined and item.item.series %}
+    <div class="card__item desc-wrap">
+      <span class="card__desc">{{ item.item.series }}</span>
+    </div>
+  {% endif %}
+  {% if item.item.frame is defined and item.item.frame %}
+    <div class="card__item frame-wrap">
+      <span class="card__frame">{{ item.item.frame }}</span>
+    </div>
+  {% endif %}
+{% set imageSrc = item.images is defined
+  and item.images['30deg'] is defined
+  and item.images['30deg'].src is defined
+  ? item.images['30deg'].src
+  : (item.image is defined and item.image.src is defined
+    ? item.image.src
+    : '') %}
+{% set imageAlt = item.images is defined
+  and item.images['30deg'] is defined
+  and item.images['30deg'].alt is defined
+  and item.images['30deg'].alt
+  ? item.images['30deg'].alt
+  : (item.image is defined and item.image.alt is defined and item.image.alt
+    ? item.image.alt
+    : (name ? name ~ ', ракурс 30°' : '')) %}
+  {% set imageSrcCard = imageSrc|replace({'/raw/': '/400/'}) %}
+  <div class="card-tire__img-wrap">
+  <img src="{{ url(imageSrcCard) }}" alt="{{ imageAlt }}" class="card-tire__img img-responsive" loading="lazy">
+  </div>
+</div>

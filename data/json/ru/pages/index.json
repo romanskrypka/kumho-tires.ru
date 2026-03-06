@@ -1,0 +1,140 @@
+{
+  "name": "index",
+  "sections": [
+    {
+      "name": "header",
+      "visible": true,
+      "data": {}
+    },
+    {
+      "name": "intro",
+      "visible": true,
+      "data": {
+        "slider": {
+          "id": "introSlider",
+          "items": [
+            {
+              "video": "data/video/intro/cover.mp4"
+            }
+          ]
+        },
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 text-center uppercase",
+          "title": "Шины Kumho — южнокорейский бренд с 60-летней историей.<br>Надёжность, проверенная временем."
+        }
+      }
+    },
+    {
+      "name": "logoline",
+      "visible": false,
+      "data": {
+        "tires": [
+          "at52",
+          "at61",
+          "cx11",
+          "es31",
+          "ha31",
+          "hp91",
+          "hs51",
+          "kl71",
+          "mt51",
+          "ps72",
+          "ta31"
+        ]
+      }
+    },
+    {
+      "name": "headline",
+      "visible": false,
+      "data": {}
+    },
+    {
+      "name": "actions",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Действующие акции"
+        },
+        "items": [
+          {
+            "href": "/warranty/",
+            "title": "Расширенная гарантия",
+            "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
+            "class": "button",
+            "target": "_self",
+            "cover": {"src": "data/img/actions/warranty.jpg"}
+          }
+        ]
+      }
+    },
+    {
+      "name": "tires",
+      "visible": true,
+      "data": {
+        "filter": {
+          "visible": false
+        },
+        "preview_limit": 8,
+        "all_models_link": {
+          "visible": true,
+          "title": "Все модели",
+          "href": "/tires/"
+        },
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Модельный ряд Kumho"
+        }
+      }
+    },
+    {
+      "name": "news",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Новости Kumho"
+        },
+        "all_news_link": {
+          "href": "/news/",
+          "title": "Все новости"
+        },
+        "items": [
+          {
+            "slug": "launch-2026",
+            "cover": {
+              "src": "data/img/news/1.png"
+            },
+            "hex": "#C72229",
+            "date": "Февраль 2026",
+            "title": "Запуск новой линейки шин",
+            "desc": "Представляем обновлённую линейку шин Kumho для городских и загородных дорог."
+          },
+          {
+            "slug": "dealers-2026",
+            "cover": {
+              "src": "data/img/news/2.png"
+            },
+            "hex": "#008ACF",
+            "date": "Январь 2026",
+            "title": "Расширение сети дилеров",
+            "desc": "Kumho расширяет сеть официальных дилеров в регионах России."
+          }
+        ]
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+<ul class="custom-list">
+  {% for item in items %}
+  {% set isButtonItem = item matches '/<a[^>]*class=[\"\'][^\"\']*\\bbutton\\b[^\"\']*[\"\']/i' %}
+  <li class="custom-list__item{% if isButtonItem %} custom-list__item-no-bullet{% endif %}">{{ item | raw }}</li>
+  {% endfor %}
+</ul>

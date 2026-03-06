@@ -1,0 +1,44 @@
+{
+  "name": "tires-list",
+  "sections": [
+    {"name": "header", "visible": true, "data": {}},
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": {
+          "src": "data/img/frames/tires.webp"
+        }
+      }
+    },
+    {
+      "name": "tires",
+      "visible": true,
+      "data": {
+        "filter": {
+          "visible": true,
+          "seasons": [
+            {"label": "Лето",        "value": "summer"},
+            {"label": "Зима",        "value": "winter",    "disabled": true},
+            {"label": "Всесезонные", "value": "allseason"},
+            {"label": "Шипованные", "value": "studded",   "disabled": true}
+          ]
+        },
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Модели шин Kumho"
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}
