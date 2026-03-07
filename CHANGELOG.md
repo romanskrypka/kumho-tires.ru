@@ -32,3 +32,4 @@
 - `PageAction` рефакторинг: 6 контент-специфичных методов заменены на 3 универсальных (`buildSeoForEntity`, `buildEntityBreadcrumb`, `injectListItems`).
 - `config/settings.php` загружает проектные значения из `config/project.php`.
 - Ядро платформы полностью content-agnostic — 0 упоминаний tires/news в `src/`.
+Актуальная версия на 07.03.2026 год в 11:17
