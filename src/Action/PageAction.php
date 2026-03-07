@@ -2,9 +2,13 @@
 
 namespace App\Action;
 
+use App\Event\EntityResolved;
+use App\Event\PageLoaded;
+use App\Event\SeoBuilt;
 use App\Service\DataLoaderService;
 use App\Service\SeoService;
 use App\Service\TemplateDataBuilder;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
@@ -23,19 +27,22 @@ final class PageAction
         DataLoaderService $dataLoader,
         SeoService $seoService,
         TemplateDataBuilder $templateDataBuilder,
-        array $settings
+        array $settings,
+        ?EventDispatcherInterface $dispatcher = null
     ) {
         $this->twig = $twig;
         $this->dataLoader = $dataLoader;
         $this->seoService = $seoService;
         $this->templateDataBuilder = $templateDataBuilder;
         $this->settings = $settings;
+        $this->dispatcher = $dispatcher;
     }
 
     private Twig $twig;
     private DataLoaderService $dataLoader;
     private SeoService $seoService;
     private TemplateDataBuilder $templateDataBuilder;
+    private ?EventDispatcherInterface $dispatcher;
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
@@ -90,6 +97,7 @@ final class PageAction
                 $pageId = $slug;
                 $routeParams = [];
                 $pageData = ['name' => $slug, 'sections' => []];
+                $this->dispatch(new EntityResolved($entityType, $slug, $entity, $entityConfig));
             } else {
                 $status = 404;
                 $pageId = '404';
@@ -117,6 +125,7 @@ final class PageAction
                             $entityType = (string) $collKey;
                             $entityConfig = $collConfig;
                             $pageData = ['name' => $subSlug, 'sections' => []];
+                            $this->dispatch(new EntityResolved($entityType, $subSlug, $entity, $entityConfig));
                         }
                     }
                     if ($entity === null) {
@@ -128,6 +137,8 @@ final class PageAction
                 break;
             }
         }
+
+        $this->dispatch(new PageLoaded($pageId, $langCode, $pageData, $status));
 
         $seoData = $this->dataLoader->loadSeo($jsonBaseDir, $langCode, $pageId, $baseUrl);
 
@@ -150,6 +161,8 @@ final class PageAction
         } else {
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
+
+        $this->dispatch(new SeoBuilt($pageId, $seoData, $entity !== null));
 
         $template = 'pages/page.twig';
         $extras = [];
@@ -322,6 +335,11 @@ final class PageAction
                 return;
             }
         }
+    }
+
+    private function dispatch(object $event): void
+    {
+        $this->dispatcher?->dispatch($event);
     }
 
     private function ensureCsrfToken(): string

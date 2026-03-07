@@ -6,17 +6,41 @@ use App\Support\JsonProcessor;
 
 final class DataLoaderService
 {
+    /**
+     * Загружает global.json — глобальные данные сайта (навигация, контакты, языки).
+     *
+     * @param string $globalPath Абсолютный путь к global.json
+     * @param string $baseUrl    Базовый URL для обработки путей изображений
+     * @return array<string,mixed> Данные global.json или [] при отсутствии файла
+     */
     public function loadGlobal(string $globalPath, string $baseUrl): array
     {
         return $this->loadJson($globalPath, $baseUrl) ?? [];
     }
 
+    /**
+     * Загружает данные страницы по page_id.
+     *
+     * @param string $pagesDir Директория страниц (data/json/{lang}/pages)
+     * @param string $pageId   Идентификатор страницы (имя файла без .json)
+     * @param string $baseUrl  Базовый URL для обработки путей
+     * @return array<string,mixed>|null Данные страницы или null если файл не найден
+     */
     public function loadPage(string $pagesDir, string $pageId, string $baseUrl): ?array
     {
         $path = rtrim($pagesDir, '/') . '/' . $pageId . '.json';
         return $this->loadJson($path, $baseUrl);
     }
 
+    /**
+     * Загружает SEO-данные страницы (title, meta, json_ld).
+     *
+     * @param string $jsonBaseDir Корневая директория JSON (data/json)
+     * @param string $langCode   Код языка (ru, en)
+     * @param string $pageId     Идентификатор страницы
+     * @param string $baseUrl    Базовый URL для обработки путей
+     * @return array<string,mixed>|null SEO-данные или null если файл не найден
+     */
     public function loadSeo(string $jsonBaseDir, string $langCode, string $pageId, string $baseUrl): ?array
     {
         $seoPath = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/seo/' . $pageId . '.json';
@@ -24,8 +48,17 @@ final class DataLoaderService
     }
 
     /**
-     * @param array<string,mixed> $collectionConfig  Конфиг коллекции из settings[collections][*]
-     * @return array<int, string>|null
+     * Загружает список slug'ов коллекции из страницы-списка.
+     *
+     * Алгоритм поиска:
+     * 1. Прямой ключ $data[$slugsSource] (например items)
+     * 2. Fallback: sections[name={nav_slug}].data.items
+     * Поддерживает строковые slug'и и объекты {"slug": "..."}.
+     *
+     * @param string              $jsonBaseDir      Корневая директория JSON (data/json)
+     * @param string              $langCode         Код языка (ru, en)
+     * @param array<string,mixed> $collectionConfig Конфиг коллекции (nav_slug, slugs_source)
+     * @return array<int,string>|null Массив slug'ов или null если не найдены
      */
     public function loadEntitySlugs(string $jsonBaseDir, string $langCode, array $collectionConfig): ?array
     {
@@ -72,8 +105,17 @@ final class DataLoaderService
     }
 
     /**
-     * @param array<string,mixed> $collectionConfig  Конфиг коллекции из settings[collections][*]
-     * @return array<string,mixed>|null
+     * Загружает данные одной сущности коллекции.
+     *
+     * Проверяет наличие item_key и visible !== false.
+     * Устанавливает $data['slug'] = $slug.
+     *
+     * @param string              $jsonBaseDir      Корневая директория JSON (data/json)
+     * @param string              $langCode         Код языка (ru, en)
+     * @param string              $slug             Slug сущности (имя файла без .json)
+     * @param string              $baseUrl          Базовый URL для обработки путей
+     * @param array<string,mixed> $collectionConfig Конфиг коллекции (data_dir, item_key)
+     * @return array<string,mixed>|null Данные сущности или null если не найдена/скрыта
      */
     public function loadEntity(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl, array $collectionConfig): ?array
     {
@@ -96,6 +138,13 @@ final class DataLoaderService
         return $data;
     }
 
+    /**
+     * Читает и декодирует JSON-файл, обрабатывает пути через JsonProcessor.
+     *
+     * @param string $path    Абсолютный путь к JSON-файлу
+     * @param string $baseUrl Базовый URL для замены относительных путей
+     * @return array<string,mixed>|null Декодированные данные или null при ошибке
+     */
     public function loadJson(string $path, string $baseUrl): ?array
     {
         if (!is_file($path)) {
