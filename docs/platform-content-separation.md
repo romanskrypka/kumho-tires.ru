@@ -380,25 +380,30 @@ private function buildNewsBreadcrumb(
 
 ### Как добавить новую коллекцию для другого проекта
 
-1. Добавить запись в `config/settings.php → collections`:
-   ```php
-   'products' => [
-       'nav_slug'     => 'products',
-       'list_page_id' => 'products-list',
-       'template'     => 'pages/product.twig',
-   ],
-   ```
+> **Обновление (2026-03-07, Этап 0 + 1):** После завершения Этапа 0 (content-agnostic ядро) и Этапа 1 (scaffold-генераторы) процесс значительно упрощён. Универсальные методы `loadEntitySlugs`/`loadEntity` в `DataLoaderService` обрабатывают любую коллекцию — **не нужно реализовывать отдельные методы загрузки**.
+
+**Способ 1 — Scaffold-генератор (рекомендуемый):**
+```bash
+npm run create-collection -- products
+# Генерирует: JSON для всех языков, 3 fixture-сущности, Twig-шаблон, SEO
+# Выводит готовый PHP-блок для вставки в config/project.php
+```
+
+**Способ 2 — Ручное создание:**
+1. Добавить запись в `config/project.php → collections` (полный формат с `item_key`, `data_dir`, `slugs_source`, `og_type`, `extras_key`)
 2. Добавить в `route_map`: `'products' => 'products-list'`
 3. Создать шаблон `templates/pages/product.twig`
 4. Создать данные в `data/json/{lang}/products/{slug}.json`
-5. Реализовать методы загрузки в `DataLoaderService` по аналогии с `loadTire` / `loadNews`
+5. Создать страницу-список `data/json/{lang}/pages/products-list.json`
 
 ### Оставшиеся точки хардкода (вне scope этого рефакторинга)
 
-| Файл | Хардкод | Рекомендация |
-|------|---------|-------------|
-| `src/Service/DataLoaderService.php` | Пути `/tires/`, `/news/` в именах методов и путях файлов | Вынести в конфиг `collections` |
-| `templates/sections/tires.twig` | Маппинг сезонных алиасов (Лето→summer, строки 127–135) | Вынести в `data.filter.season_aliases` |
-| `templates/sections/tires.twig` | `'Такие модели не найдены'` | Перенести в `data.filter.empty_text` |
-| `src/Action/ApiSendAction.php` | Сообщения об ошибках валидации на русском | Вынести в конфиг/i18n |
-| `config/settings.php → sitemap_pages` | Список страниц для sitemap | Формировать динамически из route_map |
+> **Обновление (2026-03-07, Этап 0):** `DataLoaderService` полностью очищен — универсальные методы `loadEntitySlugs`/`loadEntity` заменили контент-специфичные. `sitemap_pages` вынесен в `config/project.php`.
+
+| Файл | Хардкод | Статус |
+|------|---------|--------|
+| ~~`src/Service/DataLoaderService.php`~~ | ~~Пути `/tires/`, `/news/` в именах методов~~ | **РЕШЕНО** (Этап 0) — универсальные методы |
+| ~~`config/settings.php → sitemap_pages`~~ | ~~Список страниц для sitemap~~ | **РЕШЕНО** (Этап 0) — вынесен в `config/project.php` |
+| `templates/sections/tires.twig` | Маппинг сезонных алиасов (Лето→summer, строки 127–135) | Открыто — вынести в `data.filter.season_aliases` |
+| `templates/sections/tires.twig` | `'Такие модели не найдены'` | Открыто — перенести в `data.filter.empty_text` |
+| `src/Action/ApiSendAction.php` | Сообщения об ошибках валидации на русском | Открыто — вынести в конфиг/i18n |
