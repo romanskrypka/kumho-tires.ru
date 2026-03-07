@@ -24,11 +24,12 @@ SetEnv APP_ADMIN_MAX_FILE_SIZE 1048576
 
 ### Детали реализации
 
-- Проверки выполняются в `App\Http\Routing\ApiRouter`:
-  - Basic Auth: `getAdminBasicAuthConfig()` + `checkBasicAuth()`
-  - IP Allowlist: `isIpAllowed()` с поддержкой списка из ENV
-  - Логирование обращений: `logs/admin.log` (`ok`/`unauthorized_basic_auth`/`forbidden_ip`)
-- Ограничение размера файла реализовано в `RequestsViewerController` (метод `getMaxFileSize()`).
+> **Примечание:** Класс `App\Http\Routing\ApiRouter` упомянут в первоначальном проектировании. В текущей архитектуре (Slim 4) проверки безопасности реализуются через PSR-15 Middleware и Action-классы в `src/Action/` и `src/Middleware/`. При реализации эндпоинта `/admin/requests` следует использовать отдельный Action + middleware для Basic Auth и IP-фильтрации.
+
+- Basic Auth: проверка через middleware или непосредственно в Action
+- IP Allowlist: `isIpAllowed()` с поддержкой списка из ENV
+- Логирование обращений: `logs/admin.log` (`ok`/`unauthorized_basic_auth`/`forbidden_ip`)
+- Ограничение размера файла — в Action-классе (метод `getMaxFileSize()`).
 
 ### Логи
 

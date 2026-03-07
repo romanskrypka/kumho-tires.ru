@@ -326,40 +326,14 @@ rm -rf /c/raznoe/kumho-tmp
 
 ## 13. Как запустить проект повторно
 
+> **Обновление (2026-03-07):** После реализации Этапов 0-1 проект поддерживает `npm run init` для инициализации и `npm run build:dev` для полной сборки.
+
 ### Полный запуск с нуля
 
 ```bash
-# 1. Зависимости
 cd /c/raznoe/orch
-composer install
-npm install
-
-# 2. Окружение
-cp .env.example .env
-# APP_BASE_URL=http://localhost:8080
-# APP_ENV=development
-# APP_DEBUG=1
-
-# 3. Симлинки (junction — без прав администратора)
-node -e "
-const fs = require('fs');
-const root = 'C:/raznoe/orch';
-[
-  [root + '/assets', root + '/public/assets'],
-  [root + '/data',   root + '/public/data'],
-].forEach(([target, link]) => {
-  if (!fs.existsSync(link)) {
-    fs.symlinkSync(target, link, 'junction');
-    console.log('junction: ' + link);
-  }
-});
-"
-
-# 4. Сборка
-npm run build:css
-npm run build:js
-
-# 5. Сервер
+npm run init               # npm install + composer install + init-env
+npm run build:dev          # CSS + JS + clean + symlinks
 /c/php85/php.exe -S localhost:8080 -t public/
 ```
 
@@ -368,7 +342,8 @@ npm run build:js
 ```bash
 npm run build:css          # только CSS
 npm run build:js           # только JS
-npm run build:css && npm run build:js  # оба
+npm run build:dev          # CSS + JS + clean + symlinks
+npm run dev                # Watch-режим (CSS + JS)
 ```
 
 ---

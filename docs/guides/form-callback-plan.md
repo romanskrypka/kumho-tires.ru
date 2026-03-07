@@ -1,5 +1,7 @@
 # Рефакторинг форм обратной связи (form-callback)
 
+> **Статус: ВЫПОЛНЕНО.** Рефакторинг реализован полностью. Старый файл `assets/js/components/form-callback.js` (1001 строка) удалён. Новая модульная структура: `assets/js/components/form-callback/` (7 файлов: index.js, api.js, validation.js, mask.js, ui.js, i18n.js, constants.js).
+
 Полный рерайт с нуля по best practice. Без оглядки на legacy.
 
 ---

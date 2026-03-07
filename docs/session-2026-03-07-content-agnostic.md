@@ -243,12 +243,21 @@ npm run test:smoke
 
 ### Настройка для нового проекта
 
+> **Обновление (2026-03-07, Этап 0.5 + 1):** После реализации scaffold-генераторов шаги 2-6 можно автоматизировать.
+
 1. Скопировать `config/project.php.dist` → `config/project.php`
 2. Заполнить `route_map` — маршруты страниц
 3. Заполнить `collections` — описание коллекций сущностей
 4. Заполнить `sitemap_pages` — страницы для sitemap
 5. Создать JSON-данные в `data/json/{lang}/`
 6. Создать Twig-шаблоны в `templates/pages/`
+
+**Либо использовать scaffold-генераторы (рекомендуется):**
+```bash
+npm run create-deployment -- <client-slug>   # полная структура deployment'а
+npm run create-collection -- <slug>          # коллекция с fixtures
+npm run create-page -- <slug>                # статическая страница
+```
 
 ---
 

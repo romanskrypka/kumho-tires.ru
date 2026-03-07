@@ -63,6 +63,8 @@
 
 Приложение построено на Slim 4 с PSR-совместимой архитектурой: middleware + action + сервисы.
 
+Ядро платформы — **content-agnostic**: директория `src/` не содержит ни одного упоминания конкретных сущностей (tires, news, restaurants и т.д.). Все коллекции параметризованы через `config/project.php`.
+
 Жизненный цикл запроса:
 
 ```text
@@ -70,26 +72,34 @@ public/index.php
   ├─ Dotenv загрузка .env
   ├─ DI-контейнер (config/container.php)
   ├─ Middleware stack (config/middleware.php)
+  │   ├─ RequestDurationMiddleware (замер времени запроса)
+  │   ├─ CorrelationIdMiddleware (X-Request-Id)
   │   ├─ SecurityHeadersMiddleware (X-Content-Type-Options, HSTS и др.)
+  │   ├─ CorsMiddleware
+  │   ├─ BodyParsingMiddleware
+  │   ├─ RateLimitMiddleware (POST /api/send)
   │   ├─ LanguageMiddleware
   │   ├─ RedirectMiddleware (config/redirects.json)
   │   └─ TrailingSlashMiddleware
   ├─ Routes (config/routes.php)
   └─ PageAction
-      ├─ DataLoaderService
+      ├─ DataLoaderService (универсальные loadEntitySlugs/loadEntity)
       ├─ SeoService
       ├─ TemplateDataBuilder
+      ├─ EventDispatcher (PageLoaded, EntityResolved, SeoBuilt)
       └─ Twig render
 ```
 
 Основные модули:
 
-- `src/Action` — HTTP-обработчики (сейчас `PageAction`)
-- `src/Middleware` — PSR-15 middleware (security headers, язык, редиректы, trailing slash)
-- `src/Service` — бизнес-логика загрузки данных/SEO/сборки шаблонных данных
+- `src/Action` — HTTP-обработчики (`PageAction`, `ApiSendAction`, `SitemapAction`, `HealthAction`, `PhotoroomRemoveBackgroundAction`)
+- `src/Middleware` — PSR-15 middleware (RequestDuration, CorrelationId, SecurityHeaders, CORS, RateLimit, Language, Redirect, TrailingSlash)
+- `src/Service` — бизнес-логика (`DataLoaderService`, `SeoService`, `LanguageService`, `TemplateDataBuilder`)
+- `src/Event` — PSR-14 события (`PageLoaded`, `EntityResolved`, `SeoBuilt`) через league/event
+- `src/Handler` — обработчики ошибок (`HttpErrorHandler`, `ServerErrorHandler`)
 - `src/Twig` — Twig-расширения (`AssetExtension`, `DataExtension`, `UrlExtension`)
 - `src/Support` — вспомогательные утилиты (`JsonProcessor`, `BaseUrlResolver`)
-- `config/` — конфигурация контейнера, маршрутов, middleware и runtime-настроек (окружение и настройки: [docs/architecture/config.md](docs/architecture/config.md))
+- `config/` — конфигурация: `settings.php` (платформа), `project.php` (deployment-specific: route_map, collections, sitemap_pages), `container.php`, `middleware.php`, `routes.php` (подробнее: [docs/architecture/config.md](docs/architecture/config.md))
 
 ### Структура данных
 
@@ -102,14 +112,19 @@ data/json/
     │   ├── contacts.json          # Контакты
     │   ├── policy.json            # Политика конфиденциальности
     │   ├── agree.json             # Пользовательское соглашение
+    │   ├── tires-list.json        # Страница-список коллекции (пример)
     │   └── 404.json               # Страница ошибки 404
+    ├── tires/                     # Данные коллекции «шины» (пример)
+    │   ├── at52.json              # Один элемент коллекции
+    │   └── ...
+    ├── news/                      # Данные коллекции «новости» (пример)
+    │   └── ...
     └── seo/                       # SEO-данные
         ├── index.json             # SEO главной страницы
-        ├── contacts.json          # SEO контактов
-        ├── policy.json            # SEO политики
-        ├── agree.json             # SEO соглашения
-        └── 404.json               # SEO страницы 404
+        └── ...
 ```
+
+Коллекции (tires, news и др.) описываются в `config/project.php` и обрабатываются универсальным циклом в `PageAction`.
 
 ### Модульная структура шаблонов
 
@@ -242,17 +257,23 @@ npm run build:js:prod     # production
 npm run clean:assets
 ```
 
-### Создание компонентов
+### Scaffold-генераторы
 
 ```bash
-# Создание нового компонента
+# Создание нового компонента (CSS + JS + Twig)
 npm run create-component component-name
 
-# Создание новой секции
+# Создание новой секции (CSS + JS + Twig)
 npm run create-section section-name
 
-# Создание новой страницы
+# Создание новой страницы (JSON + SEO + route + Twig)
 npm run create-page page-name
+
+# Создание новой коллекции (JSON fixtures + config + шаблоны)
+npm run create-collection collection-name
+
+# Создание нового deployment'а (полная структура проекта)
+npm run create-deployment client-slug
 ```
 
 ### Служебные команды
@@ -310,13 +331,15 @@ project/
 │   │   └── build/                 # Собранные JS (runtime, vendors, main + manifest)
 │   ├── fonts/                     # Веб-шрифты (.woff2)
 │   └── img/                       # Иконки для ассетов
-├── src/                           # Ядро PHP-приложения (Slim 4)
-│   ├── Action/                    # Action-классы
-│   ├── Middleware/                # PSR-15 middleware
-│   ├── Service/                   # Бизнес-сервисы
-│   ├── Twig/                      # Twig extensions
-│   └── Support/                   # Утилиты/хелперы
-├── config/                        # settings/container/middleware/routes/redirects
+├── src/                           # Ядро PHP-приложения (Slim 4, content-agnostic)
+│   ├── Action/                    # Action-классы (PageAction, ApiSendAction, SitemapAction и др.)
+│   ├── Middleware/                # PSR-15 middleware (8 middleware)
+│   ├── Service/                   # Бизнес-сервисы (DataLoader, Seo, Language, TemplateDataBuilder)
+│   ├── Event/                     # PSR-14 события (PageLoaded, EntityResolved, SeoBuilt)
+│   ├── Handler/                   # Обработчики ошибок (HttpErrorHandler, ServerErrorHandler)
+│   ├── Twig/                      # Twig extensions (Asset, Data, Url)
+│   └── Support/                   # Утилиты/хелперы (JsonProcessor, BaseUrlResolver)
+├── config/                        # settings.php + project.php + container/middleware/routes/redirects
 ├── public/                        # Публичная точка входа (DocumentRoot)
 │   ├── index.php
 │   └── .htaccess
@@ -414,7 +437,10 @@ server {
 
 ### Логирование
 
-- **Логи приложения**: `logs/app.log` (Monolog)
+- **Логи приложения**: `logs/app-YYYY-MM-DD.log` (Monolog с RotatingFileHandler, JSON-формат)
+- **Структурированные поля**: `request_id` (correlation ID), `duration_ms`, `method`, `uri`, `status_code`
+- **Уровни**: `DEBUG` для development, `WARNING` для production (через `APP_ENV`)
+- Подробнее: [docs/guides/logging.md](docs/guides/logging.md)
 - Ошибки PHP/Slim также доступны через стандартный error log веб-сервера
 
 ### Оптимизация изображений
@@ -486,6 +512,10 @@ server {
 - [x] Body parsing middleware для POST-форм (если понадобится API)
 - [x] `APP_ENV` (production/development) — программное разделение окружений (Twig cache, log level)
 - [x] PHP-DI autowiring вместо ручного создания простых сервисов в `container.php`
+- [x] Content-agnostic ядро: `src/` не содержит хардкодов сущностей; коллекции параметризованы через `config/project.php`
+- [x] Event Dispatcher (PSR-14): `PageLoaded`, `EntityResolved`, `SeoBuilt` через league/event
+- [x] Универсальные методы `loadEntitySlugs`/`loadEntity` вместо отдельных методов на каждую коллекцию
+- [x] Двухуровневая конфигурация: `config/settings.php` (платформа) + `config/project.php` (deployment)
 
 ### Безопасность
 
@@ -666,30 +696,29 @@ GEO (Generative Engine Optimization) — оптимизация контента
 **Индексация и доступность для AI-краулеров:**
 
 - [x] Создать `public/llms.txt` — машиночитаемое описание сайта для LLM-краулеров (структура, назначение, основные страницы, контакты)
-- [x] Создать `public/llms-full.txt` — расширенная версия с детальным описанием всех ресторанов и услуг (генерация: `npm run generate-llms`, скрипт `tools/ops/generate-llms-full.php`)
+- [x] Создать `public/llms-full.txt` — расширенная версия с детальным описанием всех коллекций и услуг (генерация: `npm run generate-llms`, скрипт `tools/ops/generate-llms-full.php`)
 - [x] Обновить `public/robots.txt` — явно разрешить AI-краулеры (GPTBot, Google-Extended, ChatGPT-User, PerplexityBot, ClaudeBot, Applebot-Extended) или ограничить доступ для отдельных ботов по необходимости
 - [x] Генерация `sitemap.xml` — динамическая генерация с учётом мультиязычности и hreflang (маршрут `GET /sitemap.xml`, `SitemapAction`)
 
 **Расширение структурированных данных (Schema.org JSON-LD):**
 
-- [x] Генерировать JSON-LD `Restaurant` на страницах ресторанов — при запросе `/{slug}/` из списка `restaurants.json` загружаются данные из `data/json/{lang}/restaurants/*.json`, рендерится `pages/restaurant.twig`, в `<head>` выводится JSON-LD (name, address, geo, openingHours, servesCuisine, priceRange, telephone, hasMap, menu)
+- [x] Генерировать JSON-LD для сущностей коллекций — при запросе `/{slug}/` из конфигурации `config/project.php` загружаются данные коллекции, рендерится соответствующий шаблон, в `<head>` выводится JSON-LD (тип Schema.org зависит от deployment'а: Restaurant, Product и т.д.)
 - [x] Добавить JSON-LD `BreadcrumbList` — навигационная цепочка на всех внутренних страницах для понимания иерархии сайта (`TemplateDataBuilder::buildBreadcrumb`, вывод в `base.twig`)
 - [x] Перевести FAQ-разметку с микроданных на JSON-LD `FAQPage` — в `accordion.twig` добавлен вывод JSON-LD (при необходимости в данных можно задать `answerText` для ответа в разметке)
 - [x] Добавить JSON-LD `WebSite` — описание сайта в `base.twig` (SearchAction — при появлении поиска на сайте)
-- [x] Рассмотреть JSON-LD `Menu`/`MenuSection` для ресторанов (при наличии данных о меню) — рассмотрено: в Restaurant уже выводится `menu` (URL из `menuLink`); при появлении структурированного меню в JSON см. [docs/guides/geo-strategy.md](docs/guides/geo-strategy.md)
-- [x] Рассмотреть JSON-LD `Review`/`AggregateRating` для ресторанов (при наличии отзывов) — рассмотрено: при появлении полей отзывов/рейтинга в данных см. [docs/guides/geo-strategy.md](docs/guides/geo-strategy.md)
+- [x] Рассмотреть дополнительные типы JSON-LD (`Menu`/`MenuSection`, `Review`/`AggregateRating`) для специфичных deployment'ов — при появлении соответствующих полей в данных см. [docs/guides/geo-strategy.md](docs/guides/geo-strategy.md)
 
 **Цитируемость контента:**
 
-- [x] Обеспечить чёткие утверждения-факты в тексте (адреса, часы работы, кухня, цены) — на странице ресторана: подписи «Телефон:», «Типы кухни:», «Диапазон цен:», секции с явными заголовками
-- [x] Добавить структурированные блоки информации — таблица часов работы (mini-table), списки кухни и цен на странице ресторана
-- [x] Использовать формат «вопрос — ответ» в контенте — блок «Часто задаваемые вопросы» на странице ресторана (вопросы из `global.restaurant-faq`, ответы из данных ресторана), JSON-LD FAQPage в head
-- [x] Обеспечить уникальные, информативные `<title>` и `<meta description>` — для ресторанов: динамические title = имя, description = short (buildSeoForRestaurant)
+- [x] Обеспечить чёткие утверждения-факты в тексте — на детальных страницах коллекций: подписи с ключевыми данными, секции с явными заголовками
+- [x] Добавить структурированные блоки информации — таблицы (mini-table), списки характеристик на детальных страницах
+- [x] Использовать формат «вопрос — ответ» в контенте — блок FAQ с JSON-LD FAQPage в head
+- [x] Обеспечить уникальные, информативные `<title>` и `<meta description>` — для коллекций: динамические через универсальный `buildSeoForEntity`
 
 **Семантическая HTML-разметка:**
 
-- [x] Проверить иерархию заголовков (`h1`→`h2`→`h3`) — на странице ресторана: один h1, секции с h2; в секциях страниц — заголовки через heading.twig (h2)
-- [x] Использовать семантические теги (`<article>`, `<section>`, `<aside>`, `<address>`, `<time>`) — в `restaurant.twig`: `<article>`, `<section>`, `<address>`; в секциях — `<section>`
+- [x] Проверить иерархию заголовков (`h1`→`h2`→`h3`) — на детальных страницах: один h1, секции с h2; в секциях страниц — заголовки через heading.twig (h2)
+- [x] Использовать семантические теги (`<article>`, `<section>`, `<aside>`, `<address>`, `<time>`) — в шаблонах коллекций: `<article>`, `<section>`, `<address>`; в секциях — `<section>`
 - [x] Добавить атрибуты `lang` к контентным блокам при мультиязычном контенте — правило задокументировано в [docs/guides/geo-strategy.md](docs/guides/geo-strategy.md) (раздел «Атрибут lang»); применять при появлении смешанного контента на одной странице
 
 **Мониторинг и документация:**

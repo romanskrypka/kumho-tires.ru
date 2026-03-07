@@ -52,6 +52,8 @@ Implement the following plan:
 
 ### Что было сделано
 
+> **Историческая справка (2026-03-07):** Изменения 1-9 ниже описывают промежуточный рефакторинг (параметризация хардкодов через `settings.php`). В рамках Этапа 0 (session-2026-03-07-content-agnostic.md) был выполнен полный рефакторинг: конфигурация коллекций вынесена в `config/project.php`, `PageAction` переписан на универсальный цикл по коллекциям, `DataLoaderService` получил универсальные методы `loadEntitySlugs`/`loadEntity`. Промежуточные переменные `$tiresConfig`, `$newsConfig` заменены на единый цикл `foreach ($collections as $collKey => $collConfig)`.
+
 #### Изменение 1 — `config/settings.php`
 
 Добавлен блок `collections` — единый источник конфигурации коллекций (шины, новости):
