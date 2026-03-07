@@ -61,29 +61,32 @@ final class PageAction
         $pageData = $this->dataLoader->loadPage($pageJsonDir, $pageId, $baseUrl);
 
         $collections = (array) ($this->settings['collections'] ?? []);
-        $tiresConfig = (array) ($collections['tires'] ?? []);
-        $newsConfig = (array) ($collections['news'] ?? []);
-        $tiresListPageId = (string) ($tiresConfig['list_page_id'] ?? 'tires-list');
-        $newsListPageId = (string) ($newsConfig['list_page_id'] ?? 'news');
-        $tiresNavSlug = (string) ($tiresConfig['nav_slug'] ?? 'tires');
-        $newsNavSlug = (string) ($newsConfig['nav_slug'] ?? 'news');
-        $tiresTemplate = (string) ($tiresConfig['template'] ?? 'pages/tire.twig');
-        $newsTemplate = (string) ($newsConfig['template'] ?? 'pages/news.twig');
+        $jsonBaseDir = (string) ($this->settings['paths']['json_base'] ?? '');
 
         $status = 200;
-        $tire = null;
-        $tireBreadcrumb = null;
-        $news = null;
-        $newsBreadcrumb = null;
+        $entity = null;
+        $entityType = '';
+        $entityConfig = [];
 
         if ($pageData === null) {
             $slug = (string) ($segments[0] ?? '');
-            $jsonBaseDir = (string) ($this->settings['paths']['json_base'] ?? '');
-            $tireSlugs = $this->dataLoader->loadTireSlugs($jsonBaseDir, $langCode);
-            if ($slug !== '' && $tireSlugs !== null && in_array($slug, $tireSlugs, true)) {
-                $tire = $this->dataLoader->loadTire($jsonBaseDir, $langCode, $slug, $baseUrl);
+            if ($slug !== '') {
+                foreach ($collections as $collKey => $collConfig) {
+                    $collConfig = (array) $collConfig;
+                    $slugs = $this->dataLoader->loadEntitySlugs($jsonBaseDir, $langCode, $collConfig);
+                    if ($slugs !== null && in_array($slug, $slugs, true)) {
+                        $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $slug, $baseUrl, $collConfig);
+                        if ($loaded !== null) {
+                            $entity = $loaded;
+                            $entityType = (string) $collKey;
+                            $entityConfig = $collConfig;
+                            break;
+                        }
+                    }
+                }
             }
-            if ($tire !== null) {
+
+            if ($entity !== null) {
                 $pageId = $slug;
                 $routeParams = [];
                 $pageData = ['name' => $slug, 'sections' => []];
@@ -94,33 +97,42 @@ final class PageAction
             }
         }
 
-        $jsonBaseDir = (string) ($this->settings['paths']['json_base'] ?? '');
-        if ($tire === null && $pageId === $newsListPageId && count($routeParams) === 0) {
-            $this->injectNewsListItems($pageData, $jsonBaseDir, $langCode, $baseUrl);
-        }
-        if ($tire === null && $pageId === $newsListPageId && count($routeParams) === 1) {
-            $newsSlug = (string) $routeParams[0];
-            $newsSlugs = $this->dataLoader->loadNewsSlugs($jsonBaseDir, $langCode);
-            if ($newsSlugs !== null && in_array($newsSlug, $newsSlugs, true)) {
-                $news = $this->dataLoader->loadNews($jsonBaseDir, $langCode, $newsSlug, $baseUrl);
-            }
-            if ($news !== null) {
-                $pageData = ['name' => $newsSlug, 'sections' => []];
-                $newsBreadcrumb = $this->buildNewsBreadcrumb($global, $langCode, $news, $newsNavSlug);
-            } else {
-                $status = 404;
-                $pageId = '404';
-                $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
+        if ($entity === null) {
+            foreach ($collections as $collKey => $collConfig) {
+                $collConfig = (array) $collConfig;
+                $listPageId = (string) ($collConfig['list_page_id'] ?? '');
+                if ($pageId !== $listPageId) {
+                    continue;
+                }
+
+                if (count($routeParams) === 0) {
+                    $this->injectListItems($pageData, $jsonBaseDir, $langCode, $baseUrl, $collConfig);
+                } elseif (count($routeParams) === 1) {
+                    $subSlug = (string) $routeParams[0];
+                    $slugs = $this->dataLoader->loadEntitySlugs($jsonBaseDir, $langCode, $collConfig);
+                    if ($slugs !== null && in_array($subSlug, $slugs, true)) {
+                        $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $subSlug, $baseUrl, $collConfig);
+                        if ($loaded !== null) {
+                            $entity = $loaded;
+                            $entityType = (string) $collKey;
+                            $entityConfig = $collConfig;
+                            $pageData = ['name' => $subSlug, 'sections' => []];
+                        }
+                    }
+                    if ($entity === null) {
+                        $status = 404;
+                        $pageId = '404';
+                        $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
+                    }
+                }
+                break;
             }
         }
 
         $seoData = $this->dataLoader->loadSeo($jsonBaseDir, $langCode, $pageId, $baseUrl);
 
-        if ($tire !== null) {
-            $seoData = $this->buildSeoForTire($tire, $baseUrl);
-            $tireBreadcrumb = $this->buildTireBreadcrumb($global, $langCode, $tire, $tiresNavSlug);
-        } elseif ($news !== null) {
-            $seoData = $this->buildSeoForNews($news, $baseUrl);
+        if ($entity !== null) {
+            $seoData = $this->buildSeoForEntity($entity, $baseUrl, $entityConfig);
         }
 
         if ($seoData !== null) {
@@ -139,15 +151,14 @@ final class PageAction
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
 
-        $template = $tire !== null ? $tiresTemplate : ($news !== null ? $newsTemplate : 'pages/page.twig');
-
+        $template = 'pages/page.twig';
         $extras = [];
-        if ($tire !== null) {
-            $extras['tire'] = $tire;
-            $extras['breadcrumb'] = $tireBreadcrumb;
-        } elseif ($news !== null) {
-            $extras['news'] = $news;
-            $extras['breadcrumb'] = $newsBreadcrumb;
+        if ($entity !== null) {
+            $template = (string) ($entityConfig['template'] ?? 'pages/page.twig');
+            $extrasKey = (string) ($entityConfig['extras_key'] ?? $entityType);
+            $extras[$extrasKey] = $entity;
+            $extras['entity'] = $entity;
+            $extras['breadcrumb'] = $this->buildEntityBreadcrumb($global, $langCode, $entity, $entityConfig);
         }
 
         $data = $this->templateDataBuilder->build(
@@ -171,20 +182,24 @@ final class PageAction
     }
 
     /**
-     * @param array<string,mixed> $tire
+     * @param array<string,mixed> $entity
+     * @param array<string,mixed> $config
      * @return array<string,mixed>
      */
-    private function buildSeoForTire(array $tire, string $baseUrl): array
+    private function buildSeoForEntity(array $entity, string $baseUrl, array $config): array
     {
-        $t = $tire['item'] ?? [];
-        $name = (string) ($t['name'] ?? $tire['slug'] ?? '');
-        $desc = (string) ($tire['desc']['short'] ?? $tire['desc']['full'] ?? '');
+        $itemKey = (string) ($config['item_key'] ?? '');
+        $ogType = (string) ($config['og_type'] ?? 'website');
+
+        $inner = $itemKey !== '' ? ($entity[$itemKey] ?? []) : $entity;
+        $name = (string) ($inner['name'] ?? $inner['title'] ?? $entity['slug'] ?? '');
+        $desc = (string) ($entity['desc']['short'] ?? $entity['desc']['full'] ?? $inner['desc'] ?? $inner['lead'] ?? '');
 
         return [
             'title' => $name,
             'meta' => [
                 ['name' => 'description', 'content' => $desc],
-                ['property' => 'og:type', 'content' => 'website'],
+                ['property' => 'og:type', 'content' => $ogType],
                 ['property' => 'og:title', 'content' => $name],
                 ['property' => 'og:description', 'content' => $desc],
             ],
@@ -194,54 +209,61 @@ final class PageAction
     }
 
     /**
-     * @param array<string,mixed> $tire
+     * @param array<string,mixed> $global
+     * @param array<string,mixed> $entity
+     * @param array<string,mixed> $config
      * @return array<int, array{name: string, url: string}>
      */
-    private function buildTireBreadcrumb(array $global, string $langCode, array $tire, string $navSlug = 'tires'): array
+    private function buildEntityBreadcrumb(array $global, string $langCode, array $entity, array $config): array
     {
-        $t = $tire['item'] ?? [];
-        $name = (string) ($t['name'] ?? $tire['slug'] ?? '');
+        $navSlug = (string) ($config['nav_slug'] ?? '');
+        $itemKey = (string) ($config['item_key'] ?? '');
+
+        $inner = $itemKey !== '' ? ($entity[$itemKey] ?? []) : $entity;
+        $name = (string) ($inner['name'] ?? $inner['title'] ?? $entity['slug'] ?? '');
+        $slug = (string) ($entity['slug'] ?? '');
+
         $nav = $global['nav'][$langCode]['items'] ?? [];
         $homeTitle = 'Главная';
         $listTitle = ucfirst($navSlug);
         $listHref = '/' . $navSlug . '/';
-        foreach ($nav as $item) {
-            if (!is_array($item)) {
+        foreach ($nav as $navItem) {
+            if (!is_array($navItem)) {
                 continue;
             }
-            $href = trim((string) ($item['href'] ?? ''), '/');
+            $href = trim((string) ($navItem['href'] ?? ''), '/');
             if ($href === '' || $href === '/') {
-                $homeTitle = (string) ($item['title'] ?? $homeTitle);
+                $homeTitle = (string) ($navItem['title'] ?? $homeTitle);
             }
             if ($href === $navSlug) {
-                $listTitle = (string) ($item['title'] ?? $listTitle);
+                $listTitle = (string) ($navItem['title'] ?? $listTitle);
                 $listHref = '/' . $href . '/';
             }
         }
+
         return [
             ['name' => $homeTitle, 'url' => '/'],
             ['name' => $listTitle, 'url' => $listHref],
-            ['name' => $name, 'url' => '/' . $tire['slug'] . '/'],
+            ['name' => $name, 'url' => '/' . $slug . '/'],
         ];
     }
 
     /**
-     * Заполняет секцию "news" на странице /news/ данными карточек из загруженных новостей.
-     *
      * @param array<string,mixed> $pageData
+     * @param array<string,mixed> $config
      */
-    private function injectNewsListItems(array &$pageData, string $jsonBaseDir, string $langCode, string $baseUrl): void
+    private function injectListItems(array &$pageData, string $jsonBaseDir, string $langCode, string $baseUrl, array $config): void
     {
-        $slugs = [];
+        $navSlug = (string) ($config['nav_slug'] ?? '');
+        $itemKey = (string) ($config['item_key'] ?? '');
 
+        $slugs = [];
         $topLevelItems = $pageData['items'] ?? [];
         if (is_array($topLevelItems) && $topLevelItems !== []) {
             foreach ($topLevelItems as $item) {
                 if (is_string($item) && $item !== '') {
                     $slugs[] = $item;
-                    continue;
-                }
-                if (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
+                } elseif (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
                     $slugs[] = $item['slug'];
                 }
             }
@@ -256,21 +278,16 @@ final class PageAction
             foreach ($sections as $section) {
                 if (
                     !is_array($section)
-                    || ($section['name'] ?? '') !== 'news'
-                    || !isset($section['data'])
-                    || !is_array($section['data'])
+                    || ($section['name'] ?? '') !== $navSlug
                     || !isset($section['data']['items'])
                     || !is_array($section['data']['items'])
                 ) {
                     continue;
                 }
-
                 foreach ($section['data']['items'] as $item) {
                     if (is_string($item) && $item !== '') {
                         $slugs[] = $item;
-                        continue;
-                    }
-                    if (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
+                    } elseif (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
                         $slugs[] = $item['slug'];
                     }
                 }
@@ -284,81 +301,27 @@ final class PageAction
         }
 
         $items = [];
-        foreach ($slugs as $newsSlug) {
-            $news = $this->dataLoader->loadNews($jsonBaseDir, $langCode, (string) $newsSlug, $baseUrl);
-            if ($news === null) {
+        foreach ($slugs as $entitySlug) {
+            $entity = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, (string) $entitySlug, $baseUrl, $config);
+            if ($entity === null) {
                 continue;
             }
-            $n = $news['news'] ?? [];
+            $inner = $itemKey !== '' ? ($entity[$itemKey] ?? []) : $entity;
             $items[] = [
-                'slug' => $news['slug'] ?? $newsSlug,
-                'cover' => $n['cover'] ?? ['src' => ''],
-                'date' => $n['date'] ?? '',
-                'title' => $n['title'] ?? '',
-                'desc' => $n['desc'] ?? $n['lead'] ?? '',
+                'slug' => $entity['slug'] ?? $entitySlug,
+                'cover' => $inner['cover'] ?? ['src' => ''],
+                'date' => $inner['date'] ?? '',
+                'title' => $inner['title'] ?? $inner['name'] ?? '',
+                'desc' => $inner['desc'] ?? $inner['lead'] ?? '',
             ];
         }
+
         foreach ($sections as $idx => $section) {
-            if (isset($section['name']) && $section['name'] === 'news' && isset($section['data'])) {
+            if (isset($section['name']) && $section['name'] === $navSlug && isset($section['data'])) {
                 $sections[$idx]['data']['items'] = $items;
                 return;
             }
         }
-    }
-
-    /**
-     * @param array<string,mixed> $news
-     * @return array<string,mixed>
-     */
-    private function buildSeoForNews(array $news, string $baseUrl): array
-    {
-        $n = $news['news'] ?? [];
-        $title = (string) ($n['title'] ?? $news['slug'] ?? '');
-        $desc = (string) ($n['desc'] ?? $n['lead'] ?? '');
-
-        return [
-            'title' => $title,
-            'meta' => [
-                ['name' => 'description', 'content' => $desc],
-                ['property' => 'og:type', 'content' => 'article'],
-                ['property' => 'og:title', 'content' => $title],
-                ['property' => 'og:description', 'content' => $desc],
-            ],
-            'json_ld' => null,
-            'json_ld_faq' => null,
-        ];
-    }
-
-    /**
-     * @param array<string,mixed> $news
-     * @return array<int, array{name: string, url: string}>
-     */
-    private function buildNewsBreadcrumb(array $global, string $langCode, array $news, string $navSlug = 'news'): array
-    {
-        $n = $news['news'] ?? [];
-        $name = (string) ($n['title'] ?? $news['slug'] ?? '');
-        $nav = $global['nav'][$langCode]['items'] ?? [];
-        $homeTitle = 'Главная';
-        $listTitle = ucfirst($navSlug);
-        $listHref = '/' . $navSlug . '/';
-        foreach ($nav as $item) {
-            if (!is_array($item)) {
-                continue;
-            }
-            $href = trim((string) ($item['href'] ?? ''), '/');
-            if ($href === '' || $href === '/') {
-                $homeTitle = (string) ($item['title'] ?? $homeTitle);
-            }
-            if ($href === $navSlug) {
-                $listTitle = (string) ($item['title'] ?? $listTitle);
-                $listHref = '/' . $href . '/';
-            }
-        }
-        return [
-            ['name' => $homeTitle, 'url' => '/'],
-            ['name' => $listTitle, 'url' => $listHref],
-            ['name' => $name, 'url' => '/' . $navSlug . '/' . $news['slug'] . '/'],
-        ];
     }
 
     private function ensureCsrfToken(): string

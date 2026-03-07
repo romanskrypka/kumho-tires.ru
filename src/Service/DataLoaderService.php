@@ -23,51 +23,36 @@ final class DataLoaderService
         return $this->loadJson($seoPath, $baseUrl);
     }
 
-    /** @return array<int, string>|null */
-    public function loadTireSlugs(string $jsonBaseDir, string $langCode): ?array
+    /**
+     * @param array<string,mixed> $collectionConfig  Конфиг коллекции из settings[collections][*]
+     * @return array<int, string>|null
+     */
+    public function loadEntitySlugs(string $jsonBaseDir, string $langCode, array $collectionConfig): ?array
     {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/tires.json';
-        $data = $this->loadJson($path, '');
-        return isset($data['items']) && is_array($data['items']) ? $data['items'] : null;
-    }
+        $navSlug = (string) ($collectionConfig['nav_slug'] ?? '');
+        $slugsSource = (string) ($collectionConfig['slugs_source'] ?? 'items');
 
-    public function loadTire(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array
-    {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/tires/' . $slug . '.json';
-        $data = $this->loadJson($path, $baseUrl);
-        if ($data === null || empty($data['item']) || (isset($data['visible']) && $data['visible'] === false)) {
-            return null;
-        }
-        return $data;
-    }
-
-    /** @return array<int, string>|null */
-    public function loadNewsSlugs(string $jsonBaseDir, string $langCode): ?array
-    {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/news.json';
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/' . $navSlug . '.json';
         $data = $this->loadJson($path, '');
         if (!is_array($data)) {
             return null;
         }
 
         $rawItems = [];
-        if (isset($data['items']) && is_array($data['items'])) {
-            $rawItems = $data['items'];
-        } else {
-            $sections = $data['sections'] ?? [];
-            if (is_array($sections)) {
-                foreach ($sections as $section) {
-                    if (
-                        is_array($section)
-                        && ($section['name'] ?? '') === 'news'
-                        && isset($section['data'])
-                        && is_array($section['data'])
-                        && isset($section['data']['items'])
-                        && is_array($section['data']['items'])
-                    ) {
-                        $rawItems = $section['data']['items'];
-                        break;
-                    }
+        if (isset($data[$slugsSource]) && is_array($data[$slugsSource])) {
+            $rawItems = $data[$slugsSource];
+        }
+
+        if ($rawItems === [] && isset($data['sections']) && is_array($data['sections'])) {
+            foreach ($data['sections'] as $section) {
+                if (
+                    is_array($section)
+                    && ($section['name'] ?? '') === $navSlug
+                    && isset($section['data']['items'])
+                    && is_array($section['data']['items'])
+                ) {
+                    $rawItems = $section['data']['items'];
+                    break;
                 }
             }
         }
@@ -86,13 +71,27 @@ final class DataLoaderService
         return $slugs === [] ? null : array_values(array_unique($slugs));
     }
 
-    public function loadNews(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array
+    /**
+     * @param array<string,mixed> $collectionConfig  Конфиг коллекции из settings[collections][*]
+     * @return array<string,mixed>|null
+     */
+    public function loadEntity(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl, array $collectionConfig): ?array
     {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/news/' . $slug . '.json';
+        $dataDir = (string) ($collectionConfig['data_dir'] ?? '');
+        $itemKey = (string) ($collectionConfig['item_key'] ?? '');
+
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/' . $dataDir . '/' . $slug . '.json';
         $data = $this->loadJson($path, $baseUrl);
-        if ($data === null || empty($data['news']) || (isset($data['visible']) && $data['visible'] === false)) {
+        if ($data === null) {
             return null;
         }
+        if ($itemKey !== '' && empty($data[$itemKey])) {
+            return null;
+        }
+        if (isset($data['visible']) && $data['visible'] === false) {
+            return null;
+        }
+
         $data['slug'] = $slug;
         return $data;
     }

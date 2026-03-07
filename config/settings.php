@@ -38,6 +38,10 @@ if ($envDefaultLang !== false && $envDefaultLang !== '') {
 }
 
 // Ключи и ширины для адаптивных изображений (picture.twig, tools/build) — единый источник
+// Проектная конфигурация (route_map, collections, sitemap_pages, integrations)
+$projectConfigPath = __DIR__ . '/project.php';
+$projectConfig = is_file($projectConfigPath) ? (array) require $projectConfigPath : [];
+
 $imageSizesPath = __DIR__ . '/image-sizes.json';
 $image_sizes = [
     'keys' => ['800', '1600', 'raw'],
@@ -70,37 +74,12 @@ return [
         'connect_timeout' => (int) (getenv('PHOTOROOM_API_CONNECT_TIMEOUT') ?: 10),
         'internal_token' => (string) (getenv('PHOTOROOM_INTERNAL_TOKEN') ?: ''),
     ],
-    // slug в URL => page_id (файл в data/json/{lang}/pages/{page_id}.json)
-    'route_map' => [
-        'tires' => 'tires-list',
-        'news' => 'news',
-    ],
-    // Конфигурация коллекций — параметризует PageAction (детекция, breadcrumbs, шаблоны)
-    // nav_slug: slug в URL и в global.json nav (для breadcrumb-поиска)
-    // list_page_id: page_id страницы-списка (совпадает с route_map target)
-    // template: Twig-шаблон для страницы отдельного элемента
-    'collections' => [
-        'tires' => [
-            'nav_slug'     => 'tires',
-            'list_page_id' => 'tires-list',
-            'template'     => 'pages/tire.twig',
-        ],
-        'news' => [
-            'nav_slug'     => 'news',
-            'list_page_id' => 'news',
-            'template'     => 'pages/news.twig',
-        ],
-    ],
-    // page_id страниц для sitemap.xml (без 404). Задаётся под проект.
-    'sitemap_pages' => [
-        'index',
-        'contacts',
-        'policy',
-        'agree',
-        'tires-list',
-        'buy',
-        'news',
-    ],
+    // slug в URL => page_id (из project.php)
+    'route_map' => (array) ($projectConfig['route_map'] ?? []),
+    // Конфигурация коллекций (из project.php)
+    'collections' => (array) ($projectConfig['collections'] ?? []),
+    // page_id страниц для sitemap.xml (из project.php)
+    'sitemap_pages' => (array) ($projectConfig['sitemap_pages'] ?? ['index']),
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [
         'max_requests' => 10,
