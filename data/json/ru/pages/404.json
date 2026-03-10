@@ -14,9 +14,17 @@
       }
     },
     {
+      "name": "form-container",
+      "data": {}
+    },
+    {
       "name": "footer",
       "visible": true,
-      "data": {}
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
     }
   ]
 }

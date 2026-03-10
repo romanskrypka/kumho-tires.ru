@@ -1,0 +1,49 @@
+{
+  "name": "buy",
+  "sections": [
+    {
+      "name": "header",
+      "visible": true,
+      "data": {}
+    },
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": {
+          "src": "data/img/frames/buy.webp"
+        }
+      }
+    },
+    {
+      "name": "dealers",
+      "visible": true,
+      "data": {
+        "filter": {
+          "visible": true
+        },
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Где купить"
+        },
+        "map": {
+          "geolocation": true,
+          "only_mapped_cards": true,
+          "center": "55.755819, 37.617644",
+          "zoom": 4,
+          "src": "https://yandex.ru/map-widget/v1/?ll=37.617644%2C55.755819&z=4"
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}
