@@ -18,6 +18,7 @@
 7. [Настройки проекта](#7-настройки-проекта)
 8. [Запуск и проверка](#8-запуск-и-проверка)
 9. [Выводы и решения](#9-выводы-и-решения)
+10. [Архитектура репозиториев и Workflow](#10-архитектура-репозиториев-и-workflow)
 
 ---
 
@@ -67,6 +68,28 @@
 ### Промт 10 — Запрос на документацию
 
 > Задокументируй подробно в новом md файле C:\raznoe\orch\docs произведённые изменения, процесс запуска, настройки проекта и изменений в документации. Обязательно фиксируй промты в документе включая этот промт.
+
+### Промт 11 — Подтверждение коммита перемещённых файлов + push в оба репо
+
+> теперь отправь коммиты только от моего имени в оба репозитория
+
+### Промт 12 — Объяснение структуры репозиториев
+
+> сейчас объясню ситуацию и потом предложи мне варианты:
+>
+> https://github.com/itsokismart/orch - оригинальный репозиторий ритейл логистик
+> https://github.com/qbsm/kumho-tires.ru - оригинальный репозиторий khumbo
+> https://github.com/itsokismart/kumho-tires.ru/tree/master - форк репозитория khumbo (https://github.com/qbsm/kumho-tires.ru)
+>
+> Оригинальный репозиторий kumho является эталоном платформы и мне нужно сливать туда изменения, которы я делаю в репозитории дл я ритейл логистик, я делаю это сначала в форк, потом из форма заливаю в оригинал, параллельно я и мой коллега работаем также над проектом kumho и в этом случае я форк синхронизирую и далее затягиваю только файлы которые не относятся к контенту и встраиваю без поломок к текущему проекту ритейл логистик
+
+### Промт 13 — Выбор варианта A (платформенная ветка)
+
+> настрой от моего имени путь A — Платформенная ветка в форке (рекомендую)
+
+### Промт 14 — Запрос на документирование схемы
+
+> обязательно добавь эту схему в документацию
 
 ---
 
@@ -273,16 +296,16 @@ git checkout itsok/master -- templates/components/card-doc.twig templates/compon
 
 Конфигурация deployment'а Ритейл Логистик. **НЕ изменялась в этой сессии.** Осталась как была после предыдущей сессии (коммит `756d844`).
 
-### Remote'ы репозитория
+### Remote'ы репозитория (актуальные)
 
 | Remote | URL | Назначение |
 |---|---|---|
-| `origin` | `romanskrypka/orch.git` | Основной репозиторий платформы (РЛ) |
-| `itsok` | `itsokismart/kumho-tires.ru.git` | Deployment Kumho (источник улучшений) |
-| `kumho` | `romanskrypka/kumho-tires.ru.git` | Fork Kumho (личный) |
-| `qbsm` | `qbsm/kumho-tires.ru.git` | Fork Kumho (qbsm) |
+| `origin` | `itsokismart/orch.git` | Основной репозиторий платформы (РЛ) |
+| `itsok` | `itsokismart/kumho-tires.ru.git` | Форк Kumho (ветка `master` = контент Kumho, ветка `platform` = платформа из orch) |
+| `kumho` | `romanskrypka/kumho-tires.ru.git` | Fork Kumho (личный, можно удалить) |
+| `qbsm` | `qbsm/kumho-tires.ru.git` | Оригинальный репозиторий Kumho (эталон платформы) |
 
-**Замечание:** GitHub сообщил что `romanskrypka/orch.git` переехал на `itsokismart/orch.git`. Возможно, стоит обновить remote origin.
+**Обновлено:** remote `origin` обновлён с `romanskrypka/orch.git` на `itsokismart/orch.git` (GitHub redirect).
 
 ---
 
@@ -339,3 +362,126 @@ npm test
 |---|---|---|
 | `8c596eb` | fix: платформенные улучшения из itsok/master (без контента Kumho) | Первоначальный коммит (с Co-Authored-By) |
 | `6e96819` | fix: платформенные улучшения из itsok/master (без контента Kumho) | Amend: убран Co-Authored-By, force push |
+| `52a6a3b` | docs: реорганизация документации + описание merge из itsok/master | Перемещение session-файлов в docs/archit_change/ |
+
+---
+
+## 10. Архитектура репозиториев и Workflow
+
+### Репозитории проекта
+
+| Репозиторий | Роль | Ветки |
+|---|---|---|
+| **itsokismart/orch** | Проект Ритейл Логистик (основной для РЛ) | `main` |
+| **qbsm/kumho-tires.ru** | Оригинальный проект Kumho (эталон платформы) | `master` |
+| **itsokismart/kumho-tires.ru** | Форк Kumho (мост между РЛ и эталоном) | `master` (контент Kumho), `platform` (платформа из orch) |
+
+### Схема взаимодействия
+
+```
+┌─────────────────────────┐
+│   itsokismart/orch      │
+│   (Ритейл Логистик)     │
+│   ветка: main           │
+└────────┬────────────────┘
+         │
+         │ git push itsok main:platform
+         │ (только платформенные изменения)
+         ▼
+┌─────────────────────────────────┐
+│   itsokismart/kumho-tires.ru    │
+│   (форк Kumho)                  │
+│   ветка: platform ◄── из orch   │
+│   ветка: master   ◄── из qbsm  │
+└────────┬────────────────────────┘
+         │
+         │ PR: platform → qbsm:master
+         │ (платформенные улучшения в эталон)
+         ▼
+┌─────────────────────────────────┐
+│   qbsm/kumho-tires.ru          │
+│   (эталон платформы)            │
+│   ветка: master                 │
+└────────┬────────────────────────┘
+         │
+         │ git fetch qbsm master
+         │ + селективный checkout (только платформа, без контента)
+         ▼
+┌─────────────────────────┐
+│   itsokismart/orch      │
+│   (Ритейл Логистик)     │
+│   ветка: main           │
+└─────────────────────────┘
+```
+
+### Потоки данных
+
+#### Поток 1: РЛ → Эталон (платформенные улучшения)
+
+```bash
+# 1. Работа в orch/main — разработка для РЛ
+# 2. Push платформенных изменений в форк
+git push itsok main:platform
+
+# 3. Создать PR на GitHub: itsokismart/kumho-tires.ru:platform → qbsm/kumho-tires.ru:master
+# 4. Ревью и merge PR
+```
+
+#### Поток 2: Эталон → РЛ (обратная синхронизация)
+
+```bash
+# 1. Скачать изменения из эталона (read-only, ничего не меняет)
+git fetch qbsm master
+
+# 2. Посмотреть что нового
+git log main..qbsm/master --oneline
+git diff main..qbsm/master --stat
+
+# 3. Классифицировать: платформа vs контент Kumho
+git diff main..qbsm/master -- src/ templates/ assets/css/ assets/js/ config/settings.php
+
+# 4. Селективно применить только платформенные изменения
+git checkout qbsm/master -- path/to/platform/file.ext
+# или точечные правки через edit
+
+# 5. Коммит и push в orch
+git add <файлы>
+git commit -m "fix: платформенные улучшения из qbsm/master"
+git push origin main
+```
+
+#### Поток 3: Синхронизация форка с эталоном
+
+```bash
+# 1. Fetch оригинала
+git fetch qbsm master
+
+# 2. Push в форк (поддерживаем master форка = master эталона)
+git push itsok qbsm/master:master
+```
+
+### Правила фильтрации: что является платформой, а что контентом
+
+| Категория | Паттерн файлов | Действие |
+|---|---|---|
+| **Платформа (тянуть)** | `src/**`, `templates/components/**`, `templates/sections/**`, `templates/base.twig`, `templates/pages/page.twig`, `assets/js/**`, `assets/css/components/**`, `assets/css/base/**` (кроме `variables.css`), `config/settings.php`, `tools/scaffold/**`, `tests/**` | Селективный checkout / edit |
+| **Контент (НЕ тянуть)** | `data/json/**`, `data/img/**`, `config/project.php`, `assets/css/base/variables.css` (цвета), `templates/components/analytics*.twig` (ID метрики) | Игнорировать |
+| **Документация (оценивать)** | `docs/**`, `CLAUDE.md`, `README.md` | По ситуации — не тянуть если удаляет доки РЛ |
+
+### Настройка remote'ов (выполнена в этой сессии)
+
+```bash
+# Актуальные remote'ы
+git remote -v
+# origin  → itsokismart/orch.git           (РЛ)           ← main
+# itsok   → itsokismart/kumho-tires.ru.git (форк Kumho)   ← master, platform
+# qbsm    → qbsm/kumho-tires.ru.git       (эталон Kumho) ← master
+# kumho   → romanskrypka/kumho-tires.ru.git (личный форк)  — можно удалить
+
+# Ветка platform создана в форке
+git push itsok main:platform
+# → itsokismart/kumho-tires.ru:platform содержит историю orch/main
+
+# Origin обновлён на актуальный URL
+git remote set-url origin https://romanskrypka@github.com/itsokismart/orch.git
+```
