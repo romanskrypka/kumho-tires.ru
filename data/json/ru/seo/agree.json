@@ -1,14 +1,10 @@
 {
   "name": "agree",
-  "title": "Пользовательское соглашение",
+  "title": "Пользовательское соглашение — Vintegra | Ритейл Логистик",
   "meta": [
     {
       "name": "description",
-      "content": "Пользовательское соглашение. Условия использования сайта, правила предоставления услуг."
-    },
-    {
-      "property": "og:url",
-      "content": "https://example.com/agree/"
+      "content": "Пользовательское соглашение. Условия использования сайта ООО «Ритейл Логистик»."
     },
     {
       "property": "og:type",
@@ -20,19 +16,11 @@
     },
     {
       "property": "og:description",
-      "content": "Пользовательское соглашение. Условия использования сайта, правила предоставления услуг."
+      "content": "Пользовательское соглашение. Условия использования сайта ООО «Ритейл Логистик»."
     },
     {
       "property": "og:site_name",
-      "content": "Студия"
-    },
-    {
-      "property": "og:image",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
-    },
-    {
-      "property": "og:image:secure_url",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "Vintegra — Ритейл Логистик"
     }
   ]
 }

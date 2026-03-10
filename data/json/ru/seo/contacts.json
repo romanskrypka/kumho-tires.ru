@@ -1,14 +1,10 @@
 {
   "name": "contacts",
-  "title": "Контакты",
+  "title": "Контакты — Vintegra | Ритейл Логистик",
   "meta": [
     {
       "name": "description",
-      "content": "Контакты студии. ➤ Свяжитесь с нами."
-    },
-    {
-      "property": "og:url",
-      "content": "https://example.com/contacts/"
+      "content": "Контакты компании Ритейл Логистик. Свяжитесь с нами."
     },
     {
       "property": "og:type",
@@ -16,23 +12,15 @@
     },
     {
       "property": "og:title",
-      "content": "Контакты"
+      "content": "Контакты — Vintegra"
     },
     {
       "property": "og:description",
-      "content": "Контакты студии. ➤ Свяжитесь с нами."
+      "content": "Контакты компании Ритейл Логистик. Свяжитесь с нами."
     },
     {
       "property": "og:site_name",
-      "content": "Студия"
-    },
-    {
-      "property": "og:image",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
-    },
-    {
-      "property": "og:image:secure_url",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "Vintegra — Ритейл Логистик"
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "name": "demo-tools",
+  "sections": [
+    {
+      "name": "header",
+      "data": {}
+    },
+    {
+      "name": "promo",
+      "data": {
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "AI-инструменты"
+        },
+        "description": "Попробуйте возможности платформы Vintegra без регистрации",
+        "background": {
+          "src": "data/img/ui/bg1.webp"
+        }
+      }
+    },
+    {
+      "name": "content-container",
+      "data": {
+        "content": {
+          "class": "content-demo-tools",
+          "items": [
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__inner longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div><div class='section__inner' id='tool-remove-bg' data-api='/api/photoroom/remove-background'><div class='demo-tool'><div class='demo-tool__upload'><label class='demo-tool__dropzone' for='bg-upload'><input type='file' id='bg-upload' accept='image/*' hidden><span class='demo-tool__dropzone-text'>Перетащите изображение или нажмите для загрузки</span></label></div><div class='demo-tool__result' hidden><div class='demo-tool__before'><span class='demo-tool__label'>До</span><img class='demo-tool__img' alt='Исходное изображение'></div><div class='demo-tool__after'><span class='demo-tool__label'>После</span><img class='demo-tool__img' alt='Результат'></div></div><div class='demo-tool__loading' hidden><span>Обработка...</span></div><div class='demo-tool__error' hidden></div></div></div></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Удаление фона"
+              },
+              "desc": "Загрузите фотографию товара — AI автоматически удалит фон. Идеально для подготовки карточек товаров на маркетплейсы."
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__inner longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div><div class='section__inner demo-tool demo-tool--coming-soon'><div class='demo-tool__placeholder'><span>Скоро</span></div></div></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Извлечение данных с этикетки"
+              },
+              "desc": "Сфотографируйте этикетку бутылки — AI распознает и извлечёт все данные: название, производитель, объём, крепость, страна происхождения."
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__inner longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Больше инструментов?"
+              },
+              "desc": "В личном кабинете доступны дополнительные AI-сервисы: генерация описаний для карточек товаров, аналитика продаж, автоматизация документооборота. <a href='/' class='link color-3'>Войти в систему</a>"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {}
+    }
+  ]
+}
