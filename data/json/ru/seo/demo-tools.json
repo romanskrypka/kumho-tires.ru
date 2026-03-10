@@ -1,0 +1,26 @@
+{
+  "name": "demo-tools",
+  "title": "AI-инструменты — Vintegra | Ритейл Логистик",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Попробуйте AI-инструменты платформы Vintegra: удаление фона с фотографий, извлечение данных с этикеток. Без регистрации."
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "AI-инструменты — Vintegra"
+    },
+    {
+      "property": "og:description",
+      "content": "Попробуйте AI-инструменты платформы Vintegra: удаление фона с фотографий, извлечение данных с этикеток."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Vintegra — Ритейл Логистик"
+    }
+  ]
+}

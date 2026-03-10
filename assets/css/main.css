@@ -9,8 +9,6 @@
 @import "base/helpers.css";
 @import "base/animations.css";
 @import "base/mq.css";
-@import "components/filter.css";
-
 /* Sections */
 @import "sections/header.css";
 @import "sections/footer.css";
@@ -59,6 +57,7 @@
 @import "components/card-tire.css";
 @import "components/card-dealer.css";
 @import "components/card-news.css";
+@import "components/filter.css";
 
 /* Pages */
 @import "pages/404.css";

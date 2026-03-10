@@ -13,6 +13,45 @@
 - **SEO-оптимизация**: Schema.org микроразметка, Open Graph, динамические мета-теги
 - **Адаптивность**: Корректная работа в любых директориях и поддиректориях
 
+## Ветки и тиражирование
+
+Платформа использует **branch-per-project** стратегию: ядро и библиотека компонентов живут в `main`, каждый заказчик — в отдельной ветке.
+
+### Структура веток
+
+| Ветка | Назначение | Базовый коммит |
+|-------|-----------|----------------|
+| `main` | Платформа: PHP-ядро + полная библиотека шаблонов/JS/CSS. Без данных конкретного заказчика | — |
+| `project/kumho` | Kumho Tires — шинный бренд (27 моделей, 2 коллекции, полный контент) | `432097e` (v1.1.0) |
+| `project/retail-logistic` | Ритейл Логистик — импортёр алкоголя (hero + вход, trust, partners, demo-tools) | от `main` |
+
+### Правила
+
+1. **Новые компоненты и исправления ядра** → коммит в `main`
+2. **Данные конкретного заказчика** (JSON, изображения, project.php, variables.css, .env) → коммит в ветку `project/*`
+3. **Обновление платформы в проекте** → `git merge main` в ветку проекта
+4. **При создании нового проекта** → `git checkout -b project/new-client main`, затем удалить только JSON-данные и изображения предыдущего проекта. **Шаблоны, JS, CSS — не удалять** (неиспользуемые компоненты лежат неактивными, ноль влияния на рендеринг)
+
+### Создание проекта для нового заказчика
+
+```bash
+# 1. Ветка от main (со всеми шаблонами)
+git checkout main
+git checkout -b project/new-client
+
+# 2. Удалить ТОЛЬКО данные предыдущего проекта
+rm -rf data/json/ru/{collection}/ data/img/{collection}/
+rm -f data/json/ru/pages/{old-pages}.json data/json/ru/seo/{old-seo}.json
+
+# 3. Настроить: config/project.php, data/json/global.json, assets/css/base/variables.css, .env
+
+# 4. Создать контент через scaffold
+npm run create-page -- new-page
+npm run create-collection -- new-collection
+```
+
+Подробный план: [docs/tz/platform-replication-plan.md](docs/tz/platform-replication-plan.md)
+
 ## Технологический стек
 
 ### Backend

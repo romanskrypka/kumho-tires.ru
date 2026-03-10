@@ -25,6 +25,10 @@
           "href": "/"
         },
         {
+          "title": "Инструменты",
+          "href": "/demo-tools/"
+        },
+        {
           "title": "Партнёрам",
           "href": "/#partners"
         },
@@ -45,6 +49,10 @@
         {
           "title": "Home",
           "href": "/"
+        },
+        {
+          "title": "Tools",
+          "href": "/demo-tools/"
         },
         {
           "title": "Partners",
@@ -202,28 +210,6 @@
       "en": {
         "title": "Privacy Policy"
       }
-    }
-  },
-  "filter": {
-    "ru": {
-      "items": [
-        "рады детям",
-        "с красивым видом",
-        "итальянская кухня",
-        "завтраки",
-        "на каждый день",
-        "можно с животными"
-      ]
-    },
-    "en": {
-      "items": [
-        "kids friendly",
-        "with a beautiful view",
-        "italian cuisine",
-        "breakfast",
-        "every day",
-        "pets friendly"
-      ]
     }
   },
   "icons": {

@@ -1,14 +1,10 @@
 {
   "name": "404",
-  "title": "Ошибка 404. Страница не найдена.",
+  "title": "Страница не найдена — Vintegra | Ритейл Логистик",
   "meta": [
     {
       "name": "description",
-      "content": "Страница не найдена. ➤ Попробуйте найти нужную страницу на сайте."
-    },
-    {
-      "property": "og:url",
-      "content": "https://example.com/404/"
+      "content": "Страница не найдена. Вернитесь на главную страницу."
     },
     {
       "property": "og:type",
@@ -16,23 +12,15 @@
     },
     {
       "property": "og:title",
-      "content": "Ошибка 404. Страница не найдена."
+      "content": "Страница не найдена"
     },
     {
       "property": "og:description",
-      "content": "Страница не найдена. ➤ Попробуйте найти нужную страницу на сайте."
+      "content": "Страница не найдена. Вернитесь на главную страницу."
     },
     {
       "property": "og:site_name",
-      "content": "Студия"
-    },
-    {
-      "property": "og:image",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
-    },
-    {
-      "property": "og:image:secure_url",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "Vintegra — Ритейл Логистик"
     }
   ]
 }

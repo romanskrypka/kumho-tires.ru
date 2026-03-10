@@ -1,14 +1,10 @@
 {
   "name": "policy",
-  "title": "Политика в отношении обработки персональных данных",
+  "title": "Политика обработки персональных данных — Vintegra | Ритейл Логистик",
   "meta": [
     {
       "name": "description",
-      "content": "Политика в отношении обработки персональных данных при использовании сайта"
-    },
-    {
-      "property": "og:url",
-      "content": "https://example.com/policy/"
+      "content": "Политика в отношении обработки персональных данных ООО «Ритейл Логистик»."
     },
     {
       "property": "og:type",
@@ -16,23 +12,15 @@
     },
     {
       "property": "og:title",
-      "content": "Политика в отношении обработки персональных данных"
+      "content": "Политика обработки персональных данных"
     },
     {
       "property": "og:description",
-      "content": "Политика в отношении обработки персональных данных при использовании сайта"
+      "content": "Политика в отношении обработки персональных данных ООО «Ритейл Логистик»."
     },
     {
       "property": "og:site_name",
-      "content": "Студия"
-    },
-    {
-      "property": "og:image",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
-    },
-    {
-      "property": "og:image:secure_url",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "Vintegra — Ритейл Логистик"
     }
   ]
 }
