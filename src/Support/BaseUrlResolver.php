@@ -20,7 +20,7 @@ final class BaseUrlResolver
         }
 
         $scriptName = (string) ($_SERVER['SCRIPT_NAME'] ?? '/');
-        $scriptDir = dirname($scriptName);
+        $scriptDir = str_replace('\\', '/', dirname($scriptName));
         $basePath = $scriptDir === '/' || $scriptDir === '.' ? '' : rtrim($scriptDir, '/');
 
         return $scheme . '://' . $authority . $basePath . '/';

@@ -16,7 +16,13 @@
       "visible": true,
       "data": {
         "filter": {
-          "visible": true
+          "visible": true,
+          "seasons": [
+            {"label": "Лето",        "value": "summer"},
+            {"label": "Зима",        "value": "winter",    "disabled": true},
+            {"label": "Всесезонные", "value": "allseason"},
+            {"label": "Шипованные", "value": "studded",   "disabled": true}
+          ]
         },
         "heading": {
           "tag": "h1",

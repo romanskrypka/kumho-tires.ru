@@ -13,15 +13,19 @@ use App\Middleware\CorsMiddleware;
 use App\Middleware\LanguageMiddleware;
 use App\Middleware\RateLimitMiddleware;
 use App\Middleware\RedirectMiddleware;
+use App\Middleware\RequestDurationMiddleware;
 use App\Middleware\SecurityHeadersMiddleware;
 use App\Service\DataLoaderService;
 use App\Twig\AssetExtension;
 use App\Twig\DataExtension;
 use App\Twig\UrlExtension;
 use DI\ContainerBuilder;
-use Monolog\Handler\StreamHandler;
+use League\Event\EventDispatcher;
+use Monolog\Formatter\JsonFormatter;
+use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Psr\Container\ContainerInterface;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Log\LoggerInterface;
 use Slim\Psr7\Factory\ResponseFactory;
@@ -49,8 +53,14 @@ return static function (): ContainerInterface {
             $logger = new Logger('app');
             $logFile = rtrim($logDir, '/') . '/app.log';
             $level = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
-            $logger->pushHandler(new StreamHandler($logFile, $level));
+            $handler = new RotatingFileHandler($logFile, 14, $level);
+            $handler->setFormatter(new JsonFormatter());
+            $logger->pushHandler($handler);
             return $logger;
+        },
+
+        EventDispatcherInterface::class => static function (): EventDispatcherInterface {
+            return new EventDispatcher();
         },
 
         Twig::class => static function (ContainerInterface $container) use ($settings): Twig {
@@ -61,7 +71,7 @@ return static function (): ContainerInterface {
                 $proto = (string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '');
                 $https = ($proto === 'https' || (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')) ? 'https://' : 'http://';
                 $host = (string) ($_SERVER['HTTP_HOST'] ?? 'localhost');
-                $scriptDir = dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '/'));
+                $scriptDir = str_replace('\\', '/', dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '/')));
                 $basePath = $scriptDir === '/' || $scriptDir === '.' ? '' : rtrim($scriptDir, '/');
                 $baseUrl = $https . $host . $basePath;
             }
@@ -96,8 +106,12 @@ return static function (): ContainerInterface {
             ($c->get('settings')['env'] ?? 'development') === 'production'
         ),
 
+        RequestDurationMiddleware::class => \DI\autowire(),
+
         HealthAction::class => \DI\autowire(),
-        PageAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        PageAction::class => \DI\autowire()
+            ->constructorParameter('settings', \DI\get('settings'))
+            ->constructorParameter('dispatcher', \DI\get(EventDispatcherInterface::class)),
         PhotoroomApiClient::class => static fn(ContainerInterface $c) => new PhotoroomApiClient(
             (string) ($c->get('settings')['photoroom']['api_key'] ?? ''),
             (string) ($c->get('settings')['photoroom']['base_url'] ?? 'https://image-api.photoroom.com'),

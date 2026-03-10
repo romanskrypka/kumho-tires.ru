@@ -99,6 +99,10 @@
           "class": "h2 heading font-2 weight-700 heading-flex uppercase",
           "title": "Новости Kumho"
         },
+        "all_news_link": {
+          "href": "/news/",
+          "title": "Все новости"
+        },
         "items": [
           {
             "slug": "launch-2026",

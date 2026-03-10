@@ -1,5 +1,5 @@
 <section class="intro">
-  <div class="swiper-container" id="{{ data.slider.id|default('introSlider') }}" data-settings="{{ data.slider.settings|default({})|json_encode }}">
+  <div class="swiper" id="{{ data.slider.id|default('introSlider') }}" data-settings="{{ data.slider.settings|default({})|json_encode }}">
     <div class="swiper-wrapper">
       {% if data.slider.items is defined and data.slider.items is not empty %}
         {% for slide in data.slider.items %}

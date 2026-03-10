@@ -31,7 +31,8 @@
         },
         {
           "title": "Шины",
-          "href": "/tires/"
+          "href": "/tires/",
+          "active_for": ["tires-list", "tire"]
         },
         {
           "title": "Расширенная гарантия",
@@ -57,7 +58,8 @@
         },
         {
           "title": "Tires",
-          "href": "/tires/"
+          "href": "/tires/",
+          "active_for": ["tires-list", "tire"]
         },
         {
           "title": "Extended warranty",

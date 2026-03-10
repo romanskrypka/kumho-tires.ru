@@ -8,8 +8,8 @@
             {% include 'components/heading.twig' with {'item': data.heading} %}
           </div>
         {% endif %}
-        {% if page_id is defined and page_id != 'news' %}
-          <a href="{{ url('/news/') }}" class="link underline-center news__all-link">Все новости</a>
+        {% if page_id is defined and page_id != 'news' and data.all_news_link is defined %}
+          <a href="{{ url(data.all_news_link.href | default('/news/')) }}" class="link underline-center news__all-link">{{ data.all_news_link.title | default('Все новости') }}</a>
         {% endif %}
       </div>
       {% if data.items is defined and data.items is not empty %}

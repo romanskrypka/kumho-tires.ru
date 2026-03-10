@@ -72,18 +72,21 @@
         {% for value in allWidths|sort %}
           {% set widthOptions = widthOptions|merge([{'value': value, 'label': value}]) %}
         {% endfor %}
+        {% set seasonButtons = [] %}
+        {% for s in data.filter.seasons | default([]) %}
+          {% set btn = {'label': s.label, 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': s.value} %}
+          {% if s.disabled is defined and s.disabled %}
+            {% set btn = btn | merge({'disabled': true}) %}
+          {% endif %}
+          {% set seasonButtons = seasonButtons | merge([btn]) %}
+        {% endfor %}
         {% set tiresFilter = {
           'root_class': 'section__subitem filter-wrap',
           'groups': [
             {
               'type': 'buttons',
               'class': 'seasons-wrap',
-              'buttons': [
-                {'label': 'Лето', 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': 'summer'},
-                {'label': 'Зима', 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': 'winter', 'disabled': true},
-                {'label': 'Всесезонные', 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': 'allseason'},
-                {'label': 'Шипованные', 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': 'studded', 'disabled': true}
-              ]
+              'buttons': seasonButtons
             },
             {
               'type': 'select',

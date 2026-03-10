@@ -22,7 +22,7 @@
 
 <div class="slider">
   <div 
-    class="swiper-container {% if sliderSettings.pagination is defined and not sliderSettings.pagination.enabled %}no-pagination{% endif %}" 
+    class="swiper {% if sliderSettings.pagination is defined and not sliderSettings.pagination.enabled %}no-pagination{% endif %}"
     id="{{ slider_id|default('introSlider') }}" 
     data-settings="{{ sliderSettings|json_encode }}">
     <div class="swiper-wrapper">
