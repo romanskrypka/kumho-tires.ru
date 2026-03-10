@@ -19,6 +19,9 @@
 @import "sections/content.css";
 @import "sections/cookie-panel.css";
 @import "sections/intro.css";
+@import "sections/hero.css";
+@import "sections/trust.css";
+@import "sections/partners.css";
 @import "sections/frame.css";
 @import "sections/headline.css";
 @import "sections/actions.css";

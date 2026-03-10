@@ -25,23 +25,18 @@
           "href": "/"
         },
         {
-          "title": "Бренд",
-          "href": "/brand/",
-          "visible": false
+          "title": "Партнёрам",
+          "href": "/#partners"
         },
         {
-          "title": "Шины",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "title": "Контакты",
+          "href": "/contacts/"
         },
         {
-          "title": "Расширенная гарантия",
-          "href": "/warranty/"
-        },
-        {
-          "title": "Где купить",
-          "href": "/buy/",
-          "visible": true
+          "title": "Интернет-магазин",
+          "href": "https://vintegra.ru",
+          "external": true,
+          "target": "_blank"
         }
       ]
     },
@@ -52,23 +47,18 @@
           "href": "/"
         },
         {
-          "title": "Brand",
-          "href": "/brand/",
-          "visible": false
+          "title": "Partners",
+          "href": "/#partners"
         },
         {
-          "title": "Tires",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "title": "Contacts",
+          "href": "/contacts/"
         },
         {
-          "title": "Extended warranty",
-          "href": "/warranty/"
-        },
-        {
-          "title": "Where to buy",
-          "href": "/buy/",
-          "visible": true
+          "title": "Online store",
+          "href": "https://vintegra.ru",
+          "external": true,
+          "target": "_blank"
         }
       ]
     }
@@ -80,22 +70,22 @@
   "logo": {
     "horizontal": {
       "white": {
-        "src": "data/img/ui/logos/logo-h-color-1.svg",
-        "alt": "Logo"
+        "src": "data/img/ui/logos/logo-h-color-2.png",
+        "alt": "Vintegra"
       },
       "black": {
-        "src": "data/img/ui/logos/logo-h-color-2.svg",
-        "alt": "Logo"
+        "src": "data/img/ui/logos/logo-h-color-2.png",
+        "alt": "Vintegra"
       }
     },
     "vertical": {
       "white": {
-        "src": "data/img/ui/logos/logo-v-color-1.svg",
-        "alt": "Logo"
+        "src": "data/img/ui/logos/logo-h-color-2.png",
+        "alt": "Vintegra"
       },
       "black": {
-        "src": "data/img/ui/logos/logo-v-color-2.svg",
-        "alt": "Logo"
+        "src": "data/img/ui/logos/logo-h-color-2.png",
+        "alt": "Vintegra"
       }
     }
   },
