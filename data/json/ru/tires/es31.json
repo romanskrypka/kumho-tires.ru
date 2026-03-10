@@ -1,6 +1,31 @@
 {
   "slug": "es31",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "widths": [
+      165,
+      175,
+      185,
+      195,
+      205,
+      215
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70
+    ]
+  },
   "item": {
     "code": "ES31",
     "series": "Ecowing",

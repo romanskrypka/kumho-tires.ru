@@ -1,6 +1,26 @@
 {
   "slug": "mt51",
   "visible": true,
+  "filter": {
+    "season": [
+      "all-season"
+    ],
+    "diameters": [
+      15,
+      16,
+      17
+    ],
+    "widths": [
+      235,
+      265,
+      285,
+      315
+    ],
+    "profiles": [
+      70,
+      75
+    ]
+  },
   "item": {
     "code": "MT51",
     "series": "Road Venture",

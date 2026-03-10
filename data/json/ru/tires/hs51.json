@@ -1,6 +1,30 @@
 {
   "slug": "hs51",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      195,
+      205,
+      215,
+      225
+    ],
+    "profiles": [
+      45,
+      50,
+      55,
+      60,
+      65
+    ]
+  },
   "item": {
     "code": "HS51",
     "series": "ECSTA",
