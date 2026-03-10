@@ -1,6 +1,29 @@
 {
   "slug": "kc53",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      14,
+      15,
+      16
+    ],
+    "widths": [
+      175,
+      185,
+      195,
+      205,
+      215,
+      225
+    ],
+    "profiles": [
+      65,
+      70,
+      75
+    ]
+  },
   "item": {
     "code": "KC53",
     "series": "PorTran",

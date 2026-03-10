@@ -1,6 +1,35 @@
 {
   "slug": "at61",
   "visible": true,
+  "filter": {
+    "season": [
+      "all-season"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "widths": [
+      225,
+      235,
+      245,
+      255,
+      265,
+      275,
+      285
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70,
+      75
+    ]
+  },
   "item": {
     "code": "AT61",
     "series": "Road Venture",

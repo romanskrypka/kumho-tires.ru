@@ -1,6 +1,37 @@
 {
   "slug": "hp91",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "widths": [
+      225,
+      235,
+      245,
+      255,
+      265,
+      275,
+      285,
+      295
+    ],
+    "profiles": [
+      35,
+      40,
+      45,
+      50,
+      55,
+      60
+    ]
+  },
   "item": {
     "code": "HP91",
     "series": "CRUGEN",

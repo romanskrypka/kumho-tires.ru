@@ -1,6 +1,31 @@
 {
   "slug": "hs63",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      195,
+      205,
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      40,
+      45,
+      50,
+      55,
+      60
+    ]
+  },
   "item": {
     "code": "HS63",
     "series": "ECSTA",

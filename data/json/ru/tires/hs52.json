@@ -1,6 +1,33 @@
 {
   "slug": "hs52",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      175,
+      185,
+      195,
+      205,
+      215,
+      225
+    ],
+    "profiles": [
+      45,
+      50,
+      55,
+      60,
+      65
+    ]
+  },
   "item": {
     "code": "HS52",
     "series": "ECSTA",

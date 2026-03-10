@@ -1,6 +1,35 @@
 {
   "slug": "ha32-plus",
   "visible": true,
+  "filter": {
+    "season": [
+      "all-season"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "widths": [
+      185,
+      195,
+      205,
+      215,
+      225,
+      235,
+      245
+    ],
+    "profiles": [
+      40,
+      45,
+      50,
+      55,
+      60,
+      65
+    ]
+  },
   "item": {
     "code": "HA32+",
     "series": "SOLUS",

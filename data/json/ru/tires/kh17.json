@@ -1,6 +1,31 @@
 {
   "slug": "kh17",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "widths": [
+      155,
+      165,
+      175,
+      185,
+      195,
+      205
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70
+    ]
+  },
   "item": {
     "code": "KH17",
     "series": "Ecowing",

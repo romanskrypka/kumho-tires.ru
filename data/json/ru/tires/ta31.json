@@ -1,6 +1,30 @@
 {
   "slug": "ta31",
   "visible": true,
+  "filter": {
+    "season": [
+      "all-season"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      215,
+      225,
+      235,
+      245,
+      255,
+      265
+    ],
+    "profiles": [
+      60,
+      65,
+      70
+    ]
+  },
   "item": {
     "code": "TA31",
     "series": "Road Venture",

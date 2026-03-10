@@ -1,6 +1,31 @@
 {
   "slug": "cx11",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      14,
+      15,
+      16
+    ],
+    "widths": [
+      175,
+      185,
+      195,
+      205,
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      60,
+      65,
+      70,
+      75
+    ]
+  },
   "item": {
     "code": "CX11",
     "series": "PorTran",

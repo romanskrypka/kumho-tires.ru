@@ -1,6 +1,29 @@
 {
   "slug": "kh25",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      13,
+      14,
+      15
+    ],
+    "widths": [
+      155,
+      165,
+      175,
+      185,
+      195
+    ],
+    "profiles": [
+      60,
+      65,
+      70,
+      80
+    ]
+  },
   "item": {
     "code": "KH25",
     "series": "Ecowing",

@@ -1,6 +1,35 @@
 {
   "slug": "ps71",
   "visible": true,
+  "filter": {
+    "season": [
+      "summer"
+    ],
+    "diameters": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "widths": [
+      205,
+      215,
+      225,
+      235,
+      245,
+      255,
+      275
+    ],
+    "profiles": [
+      30,
+      35,
+      40,
+      45,
+      50,
+      55
+    ]
+  },
   "item": {
     "code": "PS71",
     "series": "ECSTA",
