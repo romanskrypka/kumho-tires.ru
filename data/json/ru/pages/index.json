@@ -7,102 +7,122 @@
       "data": {}
     },
     {
-      "name": "hero",
+      "name": "intro",
       "visible": true,
       "data": {
+        "slider": {
+          "id": "introSlider",
+          "items": [
+            {
+              "video": "data/video/intro/cover.mp4"
+            }
+          ]
+        },
         "heading": {
           "tag": "h1",
-          "title": "Цифровая платформа<br><span>Ритейл Логистик</span>"
-        },
-        "description": "Рабочее пространство для сотрудников: справочники, инструменты, аналитика и&nbsp;AI&#8209;сервисы&nbsp;&mdash; всё в&nbsp;одном месте",
-        "login": {
-          "visible": true,
-          "title": "Вход в систему",
-          "subtitle": "Для сотрудников Ритейл Логистик",
-          "action": "/api/auth/login",
-          "button": "Войти",
-          "fields": [
-            {
-              "name": "username",
-              "type": "text",
-              "label": "Логин",
-              "placeholder": "Введите логин",
-              "autocomplete": "username"
-            },
-            {
-              "name": "password",
-              "type": "password",
-              "label": "Пароль",
-              "placeholder": "Введите пароль",
-              "autocomplete": "current-password"
-            }
-          ],
-          "hint": "Двухфакторная аутентификация",
-          "help": "Проблемы со входом? <a href=\"mailto:it-support@retaillogistic.ru\">IT&#8209;поддержка</a>"
+          "class": "h1 heading font-2 weight-700 text-center uppercase",
+          "title": "Шины Kumho — южнокорейский бренд с 60-летней историей.<br>Надёжность, проверенная временем."
         }
       }
     },
     {
-      "name": "trust",
+      "name": "logoline",
+      "visible": false,
+      "data": {
+        "tires": [
+          "at52",
+          "at61",
+          "cx11",
+          "es31",
+          "ha31",
+          "hp91",
+          "hs51",
+          "kl71",
+          "mt51",
+          "ps72",
+          "ta31"
+        ]
+      }
+    },
+    {
+      "name": "headline",
+      "visible": false,
+      "data": {}
+    },
+    {
+      "name": "actions",
       "visible": true,
       "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Действующие акции"
+        },
         "items": [
           {
-            "icon": "🏢",
-            "title": "Импортёр и дистрибьютор",
-            "desc": "Полный цикл: от закупки до полки магазина"
-          },
-          {
-            "icon": "📊",
-            "title": "Цифровые процессы",
-            "desc": "AI-инструменты встроены в ежедневную работу"
-          },
-          {
-            "icon": "🔒",
-            "title": "Надёжность и контроль",
-            "desc": "Ролевой доступ, аудит, двухфакторная защита"
-          },
-          {
-            "icon": "🤝",
-            "title": "Открытая экосистема",
-            "desc": "Интеграция с партнёрами, банками и площадками"
+            "href": "/warranty/",
+            "title": "Расширенная гарантия",
+            "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
+            "class": "button",
+            "target": "_self",
+            "cover": {"src": "data/img/actions/warranty.jpg"}
           }
         ]
       }
     },
     {
-      "name": "partners",
+      "name": "tires",
       "visible": true,
       "data": {
-        "label": "Партнёрам",
-        "heading": "Единая среда для&nbsp;совместной работы",
-        "description": "Подключайтесь к платформе Vintegra — общие данные, прозрачные процессы, выгода для обеих сторон.",
-        "features": [
-          "Общие справочники и актуальная номенклатура",
-          "Электронный документооборот без задержек",
-          "Прозрачность остатков и движения товара",
-          "AI-инструменты для подготовки контента"
-        ],
-        "cards": [
+        "filter": {
+          "visible": false
+        },
+        "preview_limit": 8,
+        "all_models_link": {
+          "visible": true,
+          "title": "Все модели",
+          "href": "/tires/"
+        },
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Модельный ряд Kumho"
+        }
+      }
+    },
+    {
+      "name": "news",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Новости Kumho"
+        },
+        "all_news_link": {
+          "href": "/news/",
+          "title": "Все новости"
+        },
+        "items": [
           {
-            "icon": "🏦",
-            "title": "Банки и финансы",
-            "desc": "Современная инфраструктура, прозрачная отчётность, надёжный партнёр"
+            "slug": "launch-2026",
+            "cover": {
+              "src": "data/img/news/1.png"
+            },
+            "hex": "#C72229",
+            "date": "Февраль 2026",
+            "title": "Запуск новой линейки шин",
+            "desc": "Представляем обновлённую линейку шин Kumho для городских и загородных дорог."
           },
           {
-            "icon": "🚛",
-            "title": "Поставщики",
-            "desc": "Совместное управление ассортиментом и синхронизация данных"
-          },
-          {
-            "icon": "🛒",
-            "title": "Маркетплейсы",
-            "desc": "Готовый контент и автоматическая выгрузка карточек"
-          },
-          {
-            "icon": "📦",
-            "title": "Розничные сети",
-            "desc": "Обмен данными, координация поставок и промо"
+            "slug": "dealers-2026",
+            "cover": {
+              "src": "data/img/news/2.png"
+            },
+            "hex": "#008ACF",
+            "date": "Январь 2026",
+            "title": "Расширение сети дилеров",
+            "desc": "Kumho расширяет сеть официальных дилеров в регионах России."
           }
         ]
       }
@@ -110,7 +130,11 @@
     {
       "name": "footer",
       "visible": true,
-      "data": {}
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "slug": "kh17",
+  "visible": true,
+  "item": {
+    "code": "KH17",
+    "series": "Ecowing",
+    "name": "Kumho KH17 Ecowing"
+  },
+  "desc": {
+    "short": "Шина Kumho KH17 Ecowing"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/kh17/raw/kh17-30deg.webp",
+      "alt": "Kumho KH17 Ecowing, ракурс 30°"
+    }
+  }
+}

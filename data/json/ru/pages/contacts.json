@@ -22,11 +22,43 @@
       "name": "content-container",
       "data": {
         "content": {
+          "class": "content-services",
+          "items": [
+            {
+              "class": "cards-doc-wrap",
+              "content": "{% for item in item.items %}<div class='section__subitem card-doc-wrap'><div class='container-md'>{% include 'components/card-doc.twig' with {'item': item} %}</div></div>{% endfor %}",
+              "items": [
+                {
+                  "title": "Студия Компания член ассоциации АЛАРОС",
+                  "desc": "АЛАРОС — Ассоциация Ландшафтных Архитекторов России, национальное объединение ландшафтных архитекторов, строителей и творческих профессионалов."
+                },
+                {
+                  "title": "Лицензия Министерства Культуры РФ",
+                  "desc": "Осуществление деятельности по сохранению объектов культурного наследия № 25649, Л040-00103-00/02556856: реставрация и воссоздание исторического ландшафта и произведений садово-паркового искусства."
+                },
+                {
+                  "title": "СРО (саморегулируемая отраслевая организация)",
+                  "desc": "Член СРО № П-153-007814781998-3693 в области инженерных изысканий и архитектурно-строительного проектирования и их обязательствах."
+                },
+                {
+                  "title": "Союз Архитекторов России",
+                  "desc": "Пётр Лари, главный архитектор Студии является действительным членом Ассоциации Союза Архитекторов России с подтверждённым статусом — членский билет № 01976."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "content-container",
+      "data": {
+        "content": {
           "class": "content-contacts",
           "items": [
             {
               "class": "content-wrap",
-              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div><div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: item.office.title} %}</div></div><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
+              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
               "icon": {
                 "address": {
                   "src": "data/img/ui/icons/icon-locate-color-2.svg",
@@ -41,14 +73,20 @@
                   "alt": "Email"
                 }
               },
-              "office": {
-                "title": "Россия, г. Москва"
+              "goal": {
+                "phone": {
+                  "class": ""
+                }
+              },
+              "button": {
+                "title": "Показать на карте",
+                "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link"
               },
               "address": {
                 "heading": {
                   "tag": "h2",
                   "class": "h5 heading font-2 weight-700 heading-flex uppercase",
-                  "title": "Офис"
+                  "title": "Наши адреса"
                 }
               },
               "connect": {
@@ -60,13 +98,41 @@
               }
             },
             {
+              "class": "cover-wrap",
+              "content": "{% include 'components/cover.twig' with {'cover': item.cover} %}",
+              "cover": {
+                "src": "data/img/contact/cover.webp",
+                "alt": "Контакты"
+              }
+            },
+            {
+              "class": "content-wrap social-wrap",
+              "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': {'tag': 'h2', 'class': 'h5 heading font-2 weight-700 heading-flex uppercase', 'title': global['socials-headings'].ru}} %}</div><div class='section__subitem mini-table-wrap container-md'>{% set socialItems = [] %}{% for social in global.socials %}{% if social.visible %}{% set socialItems = socialItems|merge([{'title': social.title.ru, 'href': social.href, 'value': social.subscribers.ru}]) %}{% endif %}{% endfor %}{% include 'components/mini-table.twig' with {'items': socialItems} %}</div>"
+            },
+            {
               "class": "content-wrap form-callback-wrap",
-              "content": "<div class='section__subitem heading-wrap container-md'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-md'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Отправить'}}} %}</div>",
+              "content": "<div class='section__subitem heading-wrap container-md'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-md'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",
               "heading": {
                 "tag": "h2",
                 "class": "h5 heading font-2 weight-700 heading-flex uppercase",
-                "title": "Написать нам"
-              }
+                "title": "Получить консультацию"
+              },
+              "catalogs": [
+                {
+                  "title": "Каталог общественных пространств",
+                  "href": "data/catalogs/catalog-public-spaces.pdf",
+                  "icon": {
+                    "src": "/data/img/ui/icons/icon-download-sm-color-2.svg"
+                  }
+                },
+                {
+                  "title": "Каталог частных садов",
+                  "href": "data/catalogs/catalog-private-gardens.pdf",
+                  "icon": {
+                    "src": "/data/img/ui/icons/icon-download-sm-color-2.svg"
+                  }
+                }
+              ]
             }
           ]
         }
@@ -75,7 +141,11 @@
     {
       "name": "footer",
       "visible": true,
-      "data": {}
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
     }
   ]
 }
