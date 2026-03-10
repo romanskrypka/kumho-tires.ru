@@ -14,8 +14,8 @@
         {% set isActive = false %}
         {% if normalizedItemHref == '' %}
           {% set isActive = pageKey == 'index' %}
-        {% elseif normalizedItemHref == 'tires' %}
-          {% set isActive = pageKey in ['tires-list', 'tire'] %}
+        {% elseif item.active_for is defined and pageKey in item.active_for %}
+          {% set isActive = true %}
         {% else %}
           {% set isActive = pageKey == normalizedItemHref %}
         {% endif %}

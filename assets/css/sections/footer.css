@@ -3,7 +3,7 @@
   padding-top: 3rem;
   padding-bottom: 1rem;
   border-radius: 2rem 2rem 0 0;
-  background-color: var(--color-2);
+  background-color: var(--color-8);
   color: var(--color-1);
   z-index: 1;
 
@@ -53,6 +53,7 @@
   height: auto;
   object-fit: contain;
   object-position: left top;
+  filter: brightness(0) invert(1);
 }
 
 .footer .section__subitem.heading-wrap {

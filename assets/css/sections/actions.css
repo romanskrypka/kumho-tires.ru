@@ -24,8 +24,7 @@
 .actions .section__subitem.cards-action-wrap {
   display: flex;
   flex-direction: column;
-  gap: 2
-  rem;
+  gap: 2rem;
 }
 
 .actions .section__inner.card-action-wrap {

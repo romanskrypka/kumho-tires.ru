@@ -9,8 +9,6 @@
 @import "base/helpers.css";
 @import "base/animations.css";
 @import "base/mq.css";
-@import "components/filter.css";
-
 /* Sections */
 @import "sections/header.css";
 @import "sections/footer.css";
@@ -19,6 +17,9 @@
 @import "sections/content.css";
 @import "sections/cookie-panel.css";
 @import "sections/intro.css";
+@import "sections/hero.css";
+@import "sections/trust.css";
+@import "sections/partners.css";
 @import "sections/frame.css";
 @import "sections/headline.css";
 @import "sections/actions.css";
@@ -56,6 +57,7 @@
 @import "components/card-tire.css";
 @import "components/card-dealer.css";
 @import "components/card-news.css";
+@import "components/filter.css";
 
 /* Pages */
 @import "pages/404.css";

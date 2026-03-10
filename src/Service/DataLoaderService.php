@@ -6,68 +6,86 @@ use App\Support\JsonProcessor;
 
 final class DataLoaderService
 {
+    /**
+     * Загружает global.json — глобальные данные сайта (навигация, контакты, языки).
+     *
+     * @param string $globalPath Абсолютный путь к global.json
+     * @param string $baseUrl    Базовый URL для обработки путей изображений
+     * @return array<string,mixed> Данные global.json или [] при отсутствии файла
+     */
     public function loadGlobal(string $globalPath, string $baseUrl): array
     {
         return $this->loadJson($globalPath, $baseUrl) ?? [];
     }
 
+    /**
+     * Загружает данные страницы по page_id.
+     *
+     * @param string $pagesDir Директория страниц (data/json/{lang}/pages)
+     * @param string $pageId   Идентификатор страницы (имя файла без .json)
+     * @param string $baseUrl  Базовый URL для обработки путей
+     * @return array<string,mixed>|null Данные страницы или null если файл не найден
+     */
     public function loadPage(string $pagesDir, string $pageId, string $baseUrl): ?array
     {
         $path = rtrim($pagesDir, '/') . '/' . $pageId . '.json';
         return $this->loadJson($path, $baseUrl);
     }
 
+    /**
+     * Загружает SEO-данные страницы (title, meta, json_ld).
+     *
+     * @param string $jsonBaseDir Корневая директория JSON (data/json)
+     * @param string $langCode   Код языка (ru, en)
+     * @param string $pageId     Идентификатор страницы
+     * @param string $baseUrl    Базовый URL для обработки путей
+     * @return array<string,mixed>|null SEO-данные или null если файл не найден
+     */
     public function loadSeo(string $jsonBaseDir, string $langCode, string $pageId, string $baseUrl): ?array
     {
         $seoPath = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/seo/' . $pageId . '.json';
         return $this->loadJson($seoPath, $baseUrl);
     }
 
-    /** @return array<int, string>|null */
-    public function loadTireSlugs(string $jsonBaseDir, string $langCode): ?array
+    /**
+     * Загружает список slug'ов коллекции из страницы-списка.
+     *
+     * Алгоритм поиска:
+     * 1. Прямой ключ $data[$slugsSource] (например items)
+     * 2. Fallback: sections[name={nav_slug}].data.items
+     * Поддерживает строковые slug'и и объекты {"slug": "..."}.
+     *
+     * @param string              $jsonBaseDir      Корневая директория JSON (data/json)
+     * @param string              $langCode         Код языка (ru, en)
+     * @param array<string,mixed> $collectionConfig Конфиг коллекции (nav_slug, slugs_source)
+     * @return array<int,string>|null Массив slug'ов или null если не найдены
+     */
+    public function loadEntitySlugs(string $jsonBaseDir, string $langCode, array $collectionConfig): ?array
     {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/tires.json';
-        $data = $this->loadJson($path, '');
-        return isset($data['items']) && is_array($data['items']) ? $data['items'] : null;
-    }
+        $navSlug = (string) ($collectionConfig['nav_slug'] ?? '');
+        $slugsSource = (string) ($collectionConfig['slugs_source'] ?? 'items');
 
-    public function loadTire(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array
-    {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/tires/' . $slug . '.json';
-        $data = $this->loadJson($path, $baseUrl);
-        if ($data === null || empty($data['item']) || (isset($data['visible']) && $data['visible'] === false)) {
-            return null;
-        }
-        return $data;
-    }
-
-    /** @return array<int, string>|null */
-    public function loadNewsSlugs(string $jsonBaseDir, string $langCode): ?array
-    {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/news.json';
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/' . $navSlug . '.json';
         $data = $this->loadJson($path, '');
         if (!is_array($data)) {
             return null;
         }
 
         $rawItems = [];
-        if (isset($data['items']) && is_array($data['items'])) {
-            $rawItems = $data['items'];
-        } else {
-            $sections = $data['sections'] ?? [];
-            if (is_array($sections)) {
-                foreach ($sections as $section) {
-                    if (
-                        is_array($section)
-                        && ($section['name'] ?? '') === 'news'
-                        && isset($section['data'])
-                        && is_array($section['data'])
-                        && isset($section['data']['items'])
-                        && is_array($section['data']['items'])
-                    ) {
-                        $rawItems = $section['data']['items'];
-                        break;
-                    }
+        if (isset($data[$slugsSource]) && is_array($data[$slugsSource])) {
+            $rawItems = $data[$slugsSource];
+        }
+
+        if ($rawItems === [] && isset($data['sections']) && is_array($data['sections'])) {
+            foreach ($data['sections'] as $section) {
+                if (
+                    is_array($section)
+                    && ($section['name'] ?? '') === $navSlug
+                    && isset($section['data']['items'])
+                    && is_array($section['data']['items'])
+                ) {
+                    $rawItems = $section['data']['items'];
+                    break;
                 }
             }
         }
@@ -86,17 +104,47 @@ final class DataLoaderService
         return $slugs === [] ? null : array_values(array_unique($slugs));
     }
 
-    public function loadNews(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array
+    /**
+     * Загружает данные одной сущности коллекции.
+     *
+     * Проверяет наличие item_key и visible !== false.
+     * Устанавливает $data['slug'] = $slug.
+     *
+     * @param string              $jsonBaseDir      Корневая директория JSON (data/json)
+     * @param string              $langCode         Код языка (ru, en)
+     * @param string              $slug             Slug сущности (имя файла без .json)
+     * @param string              $baseUrl          Базовый URL для обработки путей
+     * @param array<string,mixed> $collectionConfig Конфиг коллекции (data_dir, item_key)
+     * @return array<string,mixed>|null Данные сущности или null если не найдена/скрыта
+     */
+    public function loadEntity(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl, array $collectionConfig): ?array
     {
-        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/news/' . $slug . '.json';
+        $dataDir = (string) ($collectionConfig['data_dir'] ?? '');
+        $itemKey = (string) ($collectionConfig['item_key'] ?? '');
+
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/' . $dataDir . '/' . $slug . '.json';
         $data = $this->loadJson($path, $baseUrl);
-        if ($data === null || empty($data['news']) || (isset($data['visible']) && $data['visible'] === false)) {
+        if ($data === null) {
             return null;
         }
+        if ($itemKey !== '' && empty($data[$itemKey])) {
+            return null;
+        }
+        if (isset($data['visible']) && $data['visible'] === false) {
+            return null;
+        }
+
         $data['slug'] = $slug;
         return $data;
     }
 
+    /**
+     * Читает и декодирует JSON-файл, обрабатывает пути через JsonProcessor.
+     *
+     * @param string $path    Абсолютный путь к JSON-файлу
+     * @param string $baseUrl Базовый URL для замены относительных путей
+     * @return array<string,mixed>|null Декодированные данные или null при ошибке
+     */
     public function loadJson(string $path, string $baseUrl): ?array
     {
         if (!is_file($path)) {

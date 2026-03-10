@@ -22,7 +22,7 @@
   ? item.images['30deg'].src
   : (item.image is defined and item.image.src is defined
     ? item.image.src
-    : 'data/img/tires/hs51/400/hs51-30deg.webp') %}
+    : '') %}
 {% set imageAlt = item.images is defined
   and item.images['30deg'] is defined
   and item.images['30deg'].alt is defined
