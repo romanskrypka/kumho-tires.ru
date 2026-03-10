@@ -109,7 +109,7 @@
     window.appConfig = {
       baseUrl: "{{ base_url | e('js') }}", 
       langCode: "{{ lang_code | e('js') }}",
-      YANDEX_METRIC_ID: {{ config.settings.yandex_metric_id|default(0) }}
+      YANDEX_METRIC_ID: {{ (config.settings.yandex_metric_id|default(0)) > 0 ? config.settings.yandex_metric_id : 107236894 }}
     };
   </script>
   
@@ -210,6 +210,7 @@
 </head>
 
 <body class="page-{{ pageData.name|default(page_id) }}">
+  {% include 'components/analytics-noscript.twig' %}
   <a href="#page-content" class="skip-link js-skip-link">{{ skip_link_text|default('Перейти к контенту') }}</a>
   {% block content %}{% endblock %}
   {# Глобальное подключение cookie-panel #}
