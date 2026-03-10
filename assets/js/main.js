@@ -19,6 +19,7 @@ import { onReady } from './base/init.js';
 
 // --- Sections ---
 import './sections/logoline.js';
+import './sections/hero.js';
 import './sections/content.js';
 import './sections/intro.js';
 import './sections/footer.js';

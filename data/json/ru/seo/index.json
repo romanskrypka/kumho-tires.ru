@@ -1,14 +1,14 @@
 {
   "name": "index",
-  "title": "Kumho Tire — главная",
+  "title": "Vintegra — Цифровая платформа Ритейл Логистик",
   "meta": [
     {
       "name": "description",
-      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+      "content": "Цифровая платформа Ритейл Логистик — рабочее пространство для сотрудников: справочники, AI-инструменты, аналитика. Экосистема для партнёров и интеграций."
     },
     {
       "property": "og:url",
-      "content": "https://example.com/"
+      "content": "https://vintegra.ru/"
     },
     {
       "property": "og:type",
@@ -16,23 +16,23 @@
     },
     {
       "property": "og:title",
-      "content": "Kumho Tire — главная"
+      "content": "Vintegra — Цифровая платформа Ритейл Логистик"
     },
     {
       "property": "og:description",
-      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+      "content": "Рабочее пространство для сотрудников: справочники, AI-инструменты, аналитика. Экосистема для партнёров."
     },
     {
       "property": "og:site_name",
-      "content": "Студия"
+      "content": "Vintegra"
     },
     {
       "property": "og:image",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "https://vintegra.ru/data/img/seo/og.webp?v=1"
     },
     {
       "property": "og:image:secure_url",
-      "content": "https://example.com/data/img/seo/og.webp?v=1"
+      "content": "https://vintegra.ru/data/img/seo/og.webp?v=1"
     }
   ]
 }
